@@ -27,7 +27,7 @@ public:
 	/*****************************
 	Constructeur de recopie
 	******************************
-	Entrée : CSommet & sommet);
+	Entrée : CSommet & sommet;
 	Necessité : néant
 	Sortie : néant
 	Entraine : l'objet en paramètre est recopié et initialisé dans un nouvel objet
@@ -61,10 +61,40 @@ public:
 	******************************
 	Entrée : néant
 	Necessité : néant
-	Sortie : unsigned int uiGRANbSommets
+	Sortie : CSommet **
 	Entraine : retourne l'attribut
 	*****************************/
 	CSommet ** CGraphe::GRAGetSommets();
+
+	/*****************************
+	Methode : Ajouter Sommet
+	******************************
+	Entrée : unsigned int uiSommet, CArc * pqArrivant, CArc * pqPartant
+	Necessité : néant
+	Sortie : néant
+	Entraine : ajoute un nouveau sommet au graphe
+	*****************************/
+	void GRAAjoutSommet(unsigned int uiSommet, CArc * pqArrivant, CArc * pqPartant);
+
+	/*****************************
+	Methode : Supprimer Sommet
+	******************************
+	Entrée : CSommet * pSOMSommet
+	Necessité : néant
+	Sortie : néant
+	Entraine : supprime un sommet au graphe
+	*****************************/
+	void GRASupprimerSommet(CSommet * pSOMSommet);
+
+	/*****************************
+	Methode : Modifier Sommet
+	******************************
+	Entrée : unsigned int uiNum, CSommet * pSOMSommet
+	Necessité : néant
+	Sortie : néant
+	Entraine : modifie un sommet au graphe
+	*****************************/
+	void GRAModifierSommet(unsigned int uiNum, CSommet * pSOMSommet);
 
 	/*****************************
 	Methode : Lire Nombre Sommets
@@ -107,36 +137,6 @@ public:
 	void GRASetNbArcs(unsigned int uiNbArcs);
 
 	/*****************************
-	Methode : Ajouter Sommet
-	******************************
-	Entrée : unsigned int uiSommet, CArc * ppqArrivant, CArc * ppqPartant
-	Necessité : néant
-	Sortie : néant
-	Entraine : ajoute un nouveau sommet au graphe
-	*****************************/
-	void GRAAjoutSommet(unsigned int uiSommet, CArc * ppqArrivant, CArc * ppqPartant);
-
-	/*****************************
-	Methode : Supprimer Sommet
-	******************************
-	Entrée : CSommet * sommet
-	Necessité : néant
-	Sortie : néant
-	Entraine : supprime un sommet au graphe
-	*****************************/
-	void GRASupprimerSommet(CSommet * sommet);
-
-	/*****************************
-	Methode : Modifier Sommet
-	******************************
-	Entrée : unsigned int uiNum, CSommet * SOMSommet
-	Necessité : néant
-	Sortie : néant
-	Entraine : modifie un sommet au graphe
-	*****************************/
-	void GRAModifierSommet(unsigned int uiNum, CSommet * SOMSommet);
-
-	/*****************************
 	Methode : Récupérer Sommet
 	******************************
 	Entrée : unsigned int uiSommet
@@ -149,12 +149,12 @@ public:
 	/*****************************
 	Methode : Ajouter Arc
 	******************************
-	Entrée : unsigned int uiDestination, CSommet * sommet
+	Entrée : unsigned int uiDestination, CSommet * pSOMSommet
 	Necessité : néant
 	Sortie : néant
 	Entraine : ajoute un nouvel arc au graphe
 	*****************************/
-	void GRAAjoutArc(unsigned int uiDestination, CSommet * SOMSommet);
+	void GRAAjoutArc(unsigned int uiDestination, CSommet * pSOMSommet);
 
 	/*****************************
 	Methode : Supprimer Arc
@@ -164,7 +164,7 @@ public:
 	Sortie : néant
 	Entraine : supprime un arc au graphe
 	*****************************/
-	void GRASupprimerArc(CArc * ARCarc, CSommet * SOMSommet);
+	void GRASupprimerArc(CArc * pARCarc, CSommet * pSOMSommet);
 
 	/*****************************
 	Methode : Afficher Arc
@@ -189,11 +189,11 @@ public:
 	/*****************************
 	Methode : Trouver Arc
 	******************************
-	Entrée : CSommet * SOMSommetSource, unsigned int uiDestination
+	Entrée : CSommet * pSOMSommetSource, unsigned int uiDestination
 	Necessité : néant
 	Sortie : CArc *
 	Entraine : cherche et renvoi l'arc
 	*****************************/
-	CArc * GRATrouverArc(CSommet * SOMSommetSource, unsigned int uiDestination);
+	CArc * GRATrouverArc(CSommet * pSOMSommetSource, unsigned int uiDestination);
 };
 #endif

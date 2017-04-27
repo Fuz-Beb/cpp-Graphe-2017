@@ -7,9 +7,13 @@
 #include <vld.h>
 void main(unsigned int argc, char *argv[])
 {
-	// Exeception si l'utilisateur n'a pas renseigné de nom de fichier
-	if (argc < 1)
-		throw CException(ECHECOUVERTUREFICHIER, "Aucun nom de fichier n'a ete fourni en parametre");
+	try {
+		// Exeception si l'utilisateur n'a pas renseigné de nom de fichier
+		if (argc < 2)
+			throw CException(ECHECOUVERTUREFICHIER, "Aucun nom de fichier n'a ete fourni en parametre");
+	} catch (CException EXCObjet) {
+		std::cerr << "Code d'erreur : " << EXCObjet.EXCLectureCode() << std::endl << EXCObjet.EXCLectureMessage() << std::endl;
+	}
 
 	// Allocations
 	CGrapheOperation ** ppqGRAGraphe = ppqGRAGraphe = (CGrapheOperation **) malloc (sizeof(CGrapheOperation *) * (argc - 1));

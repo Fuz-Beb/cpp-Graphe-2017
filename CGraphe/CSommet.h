@@ -29,22 +29,22 @@ public:
 	/*****************************
 	Constructeur de recopie
 	******************************
-	Entrée : CSommet & sommet);
+	Entrée : CSommet & SOMSommet;
 	Necessité : néant
 	Sortie : néant
 	Entraine : l'objet en paramètre est recopié et initialisé dans un nouvel objet
 	*****************************/
-	explicit CSommet(CSommet & sommet);
+	explicit CSommet(CSommet & SOMSommet);
 
 	/*****************************
 	Constructeur de confort
 	******************************
-	Entrée : unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * ppqSommetArcPartant
+	Entrée : unsigned int uiNumSommet, CArc * pqSommetArcArrivant, CArc * pqSommetArcPartant
 	Necessité : néant
 	Sortie : néant
 	Entraine : l'objet en cours est initialisé
 	*****************************/
-	explicit CSommet(unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * ppqSommetArcPartant);
+	explicit CSommet(unsigned int uiNumSommet, CArc * pqSommetArcArrivant, CArc * pqSommetArcPartant);
 
 	/*****************************
 	Destructeur par défaut
@@ -161,53 +161,52 @@ public:
 	/*****************************
 	Methode : Ajouter Arc Arrivant
 	******************************
-	Entrée : CArc * arc
+	Entrée : CArc * pARCArc
 	Necessité : néant
 	Sortie : néant
 	Entraine : affecte le paramètre arc à la liste des arcs
 	*****************************/
-	void SOMAddArcArrivant(CArc * arc);
+	void SOMAddArcArrivant(CArc * pARCArc);
 
 	/*****************************
 	Methode : Ajouter Arc Partant
 	******************************
-	Entrée : CArc * arc
+	Entrée : CArc * pARCArc
 	Necessité : néant
 	Sortie : néant
 	Entraine : affecte le paramètre arc à la liste des arcs
 	*****************************/
-	void  SOMAddArcPartant(CArc * arc);
-
+	void  SOMAddArcPartant(CArc * pARCArc);
 
 	/*****************************
 	Methode : Supprimer Arc Arrivant
 	******************************
-	Entrée : CArc * arc
+	Entrée : CArc * pARCArc
 	Necessité : néant
 	Sortie : néant
 	Entraine : supprime l'arc correspondant
 	*****************************/
-	void SOMSuppArcArrivant(CArc * arc);
+	void SOMSuppArcArrivant(CArc * pARCArc);
 
 	/*****************************
 	Methode : Supprimer Arc Partant
 	******************************
-	Entrée : CArc * arc
+	Entrée : CArc * pARCArc
 	Necessité : néant
 	Sortie : néant
 	Entraine : supprime l'arc correspondant
 	*****************************/
-	void  SOMSuppArcPartant(CArc * arc);
+	void  SOMSuppArcPartant(CArc * pARCArc);
 
 	/*****************************
 	Methode : Compter le nombre d'arc dans la liste
 	******************************
-	Entrée : CArc ** ARCListArc
+	Entrée : CArc ** ppARCList
 	Necessité : néant
 	Sortie : uiCompteur
 	Entraine : compte le nombre d'arcs dans la liste et retourne le nombre
 	*****************************/
-	unsigned int SOMCompterArc(CArc ** ARCListArc);
+	unsigned int SOMCompterArc(CArc ** ppARCList);
 
 	/*****************************
 	Methode : Vider Sommet
