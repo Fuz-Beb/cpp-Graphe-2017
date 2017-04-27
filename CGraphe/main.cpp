@@ -8,40 +8,49 @@
 void main(unsigned int argc, char *argv[])
 {
 	// Exeception si l'utilisateur n'a pas renseigné de nom de fichier
-	if (argc < 2)
+	if (argc < 1)
 		throw CException(ECHECOUVERTUREFICHIER, "Aucun nom de fichier n'a ete fourni en parametre");
 
 	// Allocations
-	CParseGraphe ** ppPARparse = (CParseGraphe**) malloc(sizeof(CParseGraphe*) * (argc - 1));
-	if (ppPARparse == nullptr)
+	CGrapheOperation ** ppqGRAGraphe = ppqGRAGraphe = (CGrapheOperation **) malloc (sizeof(CGrapheOperation *) * (argc - 1));
+	if (ppqGRAGraphe == nullptr)
+		throw CException(ECHECALLOCATION, "Echec de l'allocation");
+	CGrapheOperation ** ppqGRAGrapheInverse = (CGrapheOperation **) malloc (sizeof(CGrapheOperation *) * (argc - 1));
+	if (ppqGRAGrapheInverse == nullptr)
 		throw CException(ECHECALLOCATION, "Echec de l'allocation");
 
-	CGrapheOperation ** ppGRAGraphe = (CGrapheOperation **) malloc (sizeof(CGrapheOperation *) * (argc - 1));
-	if (ppGRAGraphe == nullptr)
-		throw CException(ECHECALLOCATION, "Echec de l'allocation");
+	CParseGraphe * ppqPARparse = nullptr;
 
-	unsigned int uiBoucleTableau;
+	unsigned int uiBoucleTableau = 0;
 
 	try {
-		for (uiBoucleTableau = 0 ; uiBoucleTableau < argc -1 ; uiBoucleTableau += 2) {
-			ppPARparse[uiBoucleTableau] = new CParseGraphe();
+		for (uiBoucleTableau = 0 ; uiBoucleTableau < argc -1 ; uiBoucleTableau++) {
+			ppqPARparse = new CParseGraphe();
+			if (ppqPARparse == nullptr)
+				throw CException(ECHECALLOCATION, "Echec de l'allocation");
+
 			printf("\n\n ------ GRAPHE NON INVERSE ------ \n\n");
-			ppPARparse[uiBoucleTableau]->PAGTraiterFichier(argv[uiBoucleTableau + 1]);
-			ppGRAGraphe[uiBoucleTableau] = ppPARparse[uiBoucleTableau]->PAGRetournerGraphe();
-			ppGRAGraphe[uiBoucleTableau + 1] = ppGRAGraphe[uiBoucleTableau]->GRAInverserGraphe();
+			ppqPARparse->PAGTraiterFichier(argv[uiBoucleTableau + 1]);
+			ppqGRAGraphe[uiBoucleTableau] = ppqPARparse->PAGRetournerGraphe();
+			ppqGRAGrapheInverse[uiBoucleTableau] = ppqGRAGraphe[uiBoucleTableau]->GRAInverserGraphe();
 			printf("\n\n ------ GRAPHE INVERSE ------ \n\n");
-			ppGRAGraphe[uiBoucleTableau + 1]->GRAAfficherGraphe();
+			ppqGRAGraphe[uiBoucleTableau]->GRAAfficherGraphe();
 		}
 	} catch (CException & EXCObjet) {
 		std::cerr << "Code d'erreur : " << EXCObjet.EXCLectureCode() << std::endl << EXCObjet.EXCLectureMessage() << std::endl;
 	}
 
+	unsigned int uiBoucleSommet = 0, uiNbSommet = 0;
+
+
 	// Désallocation mémoire
 	for (uiBoucleTableau = 0 ; uiBoucleTableau < argc -1 ; uiBoucleTableau++) {
-		delete(ppGRAGraphe[uiBoucleTableau]);
-		delete(ppPARparse[uiBoucleTableau]);
+		delete(ppqGRAGraphe[uiBoucleTableau]);
+		delete(ppqGRAGrapheInverse[uiBoucleTableau]);
 	}
-	delete(ppPARparse);
-	//delete(ppGRAGraphe);
+
+	delete(ppqPARparse);
+	delete(ppqGRAGraphe);
+	delete(ppqGRAGrapheInverse);
 }
 
