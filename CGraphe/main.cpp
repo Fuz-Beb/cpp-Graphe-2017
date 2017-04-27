@@ -4,7 +4,7 @@
 #include "CException.h"
 #include <stdio.h>
 
-//#include <vld.h>
+#include <vld.h>
 void main(unsigned int argc, char *argv[])
 {
 	// Exeception si l'utilisateur n'a pas renseigné de nom de fichier
@@ -38,9 +38,10 @@ void main(unsigned int argc, char *argv[])
 
 	// Désallocation mémoire
 	for (uiBoucleTableau = 0 ; uiBoucleTableau < argc -1 ; uiBoucleTableau++) {
-		//delete(ppGRAGraphe[uiBoucleTableau]);
-		//delete(ppPARparse[uiBoucleTableau]);
+		delete(ppGRAGraphe[uiBoucleTableau]);
+		delete(ppPARparse[uiBoucleTableau]);
 	}
-	//delete(ppPARparse);
+	delete(ppPARparse);
 	//delete(ppGRAGraphe);
 }
+

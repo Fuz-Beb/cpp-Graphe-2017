@@ -84,6 +84,7 @@
     <ClCompile Include="CParseGraphe.cpp" />
     <ClCompile Include="CSommet.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainUnitest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArc.h" />

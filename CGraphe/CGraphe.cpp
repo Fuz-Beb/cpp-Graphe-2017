@@ -34,7 +34,10 @@ CGraphe::CGraphe(CGraphe & graphe)
 	if(ppqGRASommets == nullptr)
 		throw CException(ECHECALLOCATION, "Echec de l'allocation");
 
-	ppqGRASommets = graphe.ppqGRASommets;
+	for(unsigned int uiBoucle = 0 ; uiBoucle < graphe.uiGRANbSommets ; uiBoucle++) {
+		ppqGRASommets[uiBoucle] = new CSommet(*graphe.ppqGRASommets[uiBoucle]);
+	}
+
 	uiGRANbSommets = graphe.uiGRANbSommets;
 	uiGRANbArcs = graphe.uiGRANbArcs;
 }

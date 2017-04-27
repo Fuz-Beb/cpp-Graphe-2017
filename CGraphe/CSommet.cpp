@@ -47,7 +47,7 @@ CSommet::CSommet(CSommet & sommet)
 				throw new CException(ECHECALLOCATION, "Echec de l'allocation");
         
 			for(unsigned int uiBoucle = 0 ; uiBoucle < uiSOMNbrArcArrivant ; uiBoucle++)
-				ppqSOMArcArrivant[uiBoucle] = sommet.ppqSOMArcArrivant[uiBoucle];
+				ppqSOMArcArrivant[uiBoucle] = new CArc(*sommet.ppqSOMArcArrivant[uiBoucle]);
         }
         
         // Allocation des arcs partant
@@ -57,7 +57,7 @@ CSommet::CSommet(CSommet & sommet)
 				throw new CException(ECHECALLOCATION, "Echec de l'allocation");
                 
 			for(unsigned int uiBoucle = 0 ; uiBoucle < uiSOMNbrArcPartant ; uiBoucle++)
-				ppqSOMArcPartant[uiBoucle] = sommet.ppqSOMArcPartant[uiBoucle];
+				ppqSOMArcPartant[uiBoucle] = new CArc(*sommet.ppqSOMArcPartant[uiBoucle]);
         }
 }
 
@@ -378,7 +378,6 @@ void CSommet::SOMViderSommet()
 	// Boucle de suppression des arcs arrivant
 	while(uiBoucle != uiSOMNbrArcArrivant) {
 		delete(ppqSOMArcArrivant[uiBoucle]);
-		ppqSOMArcArrivant[uiBoucle] = nullptr;
 		uiBoucle++;
 	}
 
@@ -389,7 +388,6 @@ void CSommet::SOMViderSommet()
 	// Boucle de suppression des arcs partant
 	while(uiBoucle != uiSOMNbrArcPartant) {
 		delete(ppqSOMArcPartant[uiBoucle]);
-		ppqSOMArcPartant[uiBoucle] = nullptr;
 		uiBoucle++;
 	}
 
