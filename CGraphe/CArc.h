@@ -43,12 +43,12 @@ public:
 	/*****************************
 	Surcharge de l'operateur =
 	******************************
-	Entree : unsigned int uiDestination
+	Entree : CArc & ARCArc
 	Necessite : neant
-	Sortie : neant
-	Entraine : l'objet en cours est initialise
+	Sortie : CArc &
+	Entraine : modification de l'objet a gauche du signe
 	*****************************/
-	CArc::operator=(CArc & ARCArc)
+	CArc & operator=(CArc & ARCArc);
 
 	/*****************************
 	Destructeur par defaut
