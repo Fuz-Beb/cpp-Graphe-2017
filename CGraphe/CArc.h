@@ -4,49 +4,59 @@
 class CArc
 {
 private:
-	// Attributs
+	// Attribut
 	unsigned int uiARCDestination;
 
 public:
 	// Constructeurs / Destructeurs
 
 	/*****************************
-	Constructeur par défaut
+	Constructeur par defaut
 	******************************
-	Entrée : néant
-	Necessité : néant
-	Sortie : néant
-	Entraine : l'objet en cours est initialisé
+	Entree : neant
+	Necessite : neant
+	Sortie : neant
+	Entraine : l'objet en cours est initialise
 	*****************************/
 	explicit CArc();
 
 	/*****************************
 	Constructeur de recopie
 	******************************
-	Entrée : CArc & arc
-	Necessité : néant
-	Sortie : néant
-	Entraine : l'objet en paramètre est recopié et initialisé dans un nouvel objet
+	Entree : CArc & arc
+	Necessite : neant
+	Sortie : neant
+	Entraine : l'objet en paramÃ¨tre est recopie et initialise dans un nouvel objet
 	*****************************/
 	explicit CArc(CArc & arc);
 
 	/*****************************
 	Constructeur de confort
 	******************************
-	Entrée : unsigned int uiDestination
-	Necessité : néant
-	Sortie : néant
-	Entraine : l'objet en cours est initialisé
+	Entree : unsigned int uiDestination
+	Necessite : neant
+	Sortie : neant
+	Entraine : l'objet en cours est initialise
 	*****************************/
 	explicit CArc(unsigned int uiNumDestination);
+	
+	/*****************************
+	Surcharge de l'operateur =
+	******************************
+	Entree : unsigned int uiDestination
+	Necessite : neant
+	Sortie : neant
+	Entraine : l'objet en cours est initialise
+	*****************************/
+	CArc::operator=(CArc & ARCArc)
 
 	/*****************************
-	Destructeur par défaut
+	Destructeur par defaut
 	******************************
-	Entrée : néant
-	Necessité : néant
-	Sortie : néant
-	Entraine : l'objet est détruit
+	Entree : neant
+	Necessite : neant
+	Sortie : neant
+	Entraine : l'objet est detruit
 	*****************************/
 	~CArc();
 
@@ -55,8 +65,8 @@ public:
 	/*****************************
 	Methode : Lire Destination
 	******************************
-	Entrée : néant
-	Necessité : néant
+	Entree : neant
+	Necessite : neant
 	Sortie : unsigned int uiDestination
 	Entraine : retourne l'attribut
 	*****************************/
@@ -65,10 +75,10 @@ public:
 	/*****************************
 	Methode : Modifier Destination
 	******************************
-	Entrée : unsigned int uiDestination
-	Necessité : néant
-	Sortie : néant
-	Entraine : affecte le paramètre à l'attribut
+	Entree : unsigned int uiDestination
+	Necessite : neant
+	Sortie : neant
+	Entraine : affecte le parametre a l'attribut
 	*****************************/
 	void ARCSetDestination(unsigned int uiDestination);
 };
