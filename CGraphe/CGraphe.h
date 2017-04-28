@@ -52,10 +52,7 @@ public:
 	Sortie : CGraphe &
 	Entraine : modification de l'objet a gauche du signe
 	*****************************/
-	CGraphe & CGraphe::operateur=(CGraphe & GRAGraphe)
-	{
-		// To do	
-	}
+	CGraphe & CGraphe::operateur=(CGraphe & GRAGraphe);
 
 	/*****************************
 	Destructeur par défaut
