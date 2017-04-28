@@ -1,12 +1,12 @@
 #include "CArc.h"
 
 /*****************************
-Constructeur par défaut
+Constructeur par defaut
 ******************************
-Entrée : néant
-Necessité : néant
-Sortie : néant
-Entraine : l'objet en cours est initialisé
+Entree : neant
+Necessite : neant
+Sortie : neant
+Entraine : l'objet en cours est initialise
 *****************************/
 CArc::CArc() 
 {
@@ -16,10 +16,10 @@ CArc::CArc()
 /*****************************
 Constructeur de recopie
 ******************************
-Entrée : CArc & arc
-Necessité : néant
-Sortie : néant
-Entraine : l'objet en paramètre est recopié et initialisé dans un nouvel objet
+Entree : CArc & arc
+Necessite : neant
+Sortie : neant
+Entraine : l'objet en parametre est recopie et initialise dans un nouvel objet
 *****************************/
 CArc::CArc(CArc & arc)
 {
@@ -29,10 +29,10 @@ CArc::CArc(CArc & arc)
 /*****************************
 Constructeur de confort
 ******************************
-Entrée : unsigned int uiDestination
-Necessité : néant
-Sortie : néant
-Entraine : l'objet en cours est initialisé
+Entree : unsigned int uiDestination
+Necessite : neant
+Sortie : neant
+Entraine : l'objet en cours est initialise
 *****************************/
 CArc::CArc(unsigned int uiNumDestination)
 {
@@ -40,12 +40,25 @@ CArc::CArc(unsigned int uiNumDestination)
 }
 
 /*****************************
-Destructeur par défaut
+Surcharge de l'operateur =
 ******************************
-Entrée : néant
-Necessité : néant
-Sortie : néant
-Entraine : l'objet est détruit
+Entree : unsigned int uiDestination
+Necessite : neant
+Sortie : neant
+Entraine : l'objet en cours est initialise
+*****************************/
+CArc::operator=(CArc & ARCArc)
+{
+	uiARCDestination = ARCArc.uiARCDestination;
+}
+
+/*****************************
+Destructeur par defaut
+******************************
+Entree : neant
+Necessite : neant
+Sortie : neant
+Entraine : l'objet est detruit
 *****************************/
 CArc::~CArc()
 {
@@ -54,8 +67,8 @@ CArc::~CArc()
 /*****************************
 Methode : Lire Destination
 ******************************
-Entrée : néant
-Necessité : néant
+Entree : neant
+Necessite : neant
 Sortie : unsigned int uiDestination
 Entraine : retourne l'attribut
 *****************************/
@@ -67,10 +80,10 @@ unsigned int CArc::ARCGetDestination()
 /*****************************
 Methode : Modifier Destination
 ******************************
-Entrée : unsigned int uiDestination
-Necessité : néant
-Sortie : néant
-Entraine : affecte le paramètre à l'attribut
+Entree : unsigned int uiDestination
+Necessite : neant
+Sortie : neant
+Entraine : affecte le parametre a l'attribut
 *****************************/
 void CArc::ARCSetDestination(unsigned int uiDestination) 
 {
