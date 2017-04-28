@@ -17,42 +17,52 @@ public:
 	// Constructeurs / Destructeurs
 
 	/*****************************
-	Constructeur par défaut
+	Constructeur par dÃ©faut
 	******************************
-	Entrée : néant
-	Necessité : néant
-	Sortie : néant
-	Entraine : l'objet en cours est initialisé
+	EntrÃ©e : nÃ©ant
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : l'objet en cours est initialisÃ©
 	*****************************/
 	explicit CSommet();
 
 	/*****************************
 	Constructeur de recopie
 	******************************
-	Entrée : CSommet & SOMSommet;
-	Necessité : néant
-	Sortie : néant
-	Entraine : l'objet en paramètre est recopié et initialisé dans un nouvel objet
+	EntrÃ©e : CSommet & SOMSommet;
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : l'objet en paramÃ¨tre est recopiÃ© et initialisÃ© dans un nouvel objet
 	*****************************/
 	explicit CSommet(CSommet & SOMSommet);
 
 	/*****************************
 	Constructeur de confort
 	******************************
-	Entrée : unsigned int uiNumSommet, CArc * pqSommetArcArrivant, CArc * pqSommetArcPartant
-	Necessité : néant
-	Sortie : néant
-	Entraine : l'objet en cours est initialisé
+	EntrÃ©e : unsigned int uiNumSommet, CArc * pqSommetArcArrivant, CArc * pqSommetArcPartant
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : l'objet en cours est initialisÃ©
 	*****************************/
 	explicit CSommet(unsigned int uiNumSommet, CArc * pqSommetArcArrivant, CArc * pqSommetArcPartant);
+	
+	/*****************************
+	Surchage de l'operateur =
+	******************************
+	EntrÃ©e : CSommet & SOMSommet
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : modification de l'objet a gauche du signe
+	*****************************/
+	CSommet & operator=(CSommet & SOMSommet);
 
 	/*****************************
-	Destructeur par défaut
+	Destructeur par dÃ©faut
 	******************************
-	Entrée : néant
-	Necessité : néant
-	Sortie : néant
-	Entraine : l'objet est détruit
+	EntrÃ©e : nÃ©ant
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : l'objet est dÃ©truit
 	*****************************/
 	~CSommet();
 
@@ -61,8 +71,8 @@ public:
 	/*****************************
 	Methode : Lire Numero
 	******************************
-	Entrée : néant
-	Necessité : néant
+	EntrÃ©e : nÃ©ant
+	NecessitÃ© : nÃ©ant
 	Sortie : unsigned int uiDestination
 	Entraine : retourne l'attribut
 	*****************************/
@@ -71,18 +81,18 @@ public:
 	/*****************************
 	Methode : Modifier Numero
 	******************************
-	Entrée : unsigned int uiNum
-	Necessité : néant
-	Sortie : néant
-	Entraine : affecte le paramètre à l'attribut
+	EntrÃ©e : unsigned int uiNum
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : affecte le paramÃ¨tre Ã  l'attribut
 	*****************************/
 	void SOMSetNum(unsigned int uiNum);
 
 	/*****************************
 	Methode : Lire Nombre Arc
 	******************************
-	Entrée : néant
-	Necessité : néant
+	EntrÃ©e : nÃ©ant
+	NecessitÃ© : nÃ©ant
 	Sortie : unsigned int uiNbr
 	Entraine : retourne l'attribut
 	*****************************/
@@ -91,18 +101,18 @@ public:
 	/*****************************
 	Methode : Modifier Nombre Arc
 	******************************
-	Entrée : unsigned int uiNbr
-	Necessité : néant
-	Sortie : néant
-	Entraine : affecte le paramètre à l'attribut
+	EntrÃ©e : unsigned int uiNbr
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : affecte le paramÃ¨tre Ã  l'attribut
 	*****************************/
 	void SOMSetNbrArcArrivant(unsigned int uiNbr);
 
 	/*****************************
 	Methode : Lire Nombre Arc
 	******************************
-	Entrée : néant
-	Necessité : néant
+	EntrÃ©e : nÃ©ant
+	NecessitÃ© : nÃ©ant
 	Sortie : unsigned int uiNbr
 	Entraine : retourne l'attribut
 	*****************************/
@@ -111,18 +121,18 @@ public:
 	/*****************************
 	Methode : Modifier Nombre Arc
 	******************************
-	Entrée : unsigned int uiNbr
-	Necessité : néant
-	Sortie : néant
-	Entraine : affecte le paramètre à l'attribut
+	EntrÃ©e : unsigned int uiNbr
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : affecte le paramÃ¨tre Ã  l'attribut
 	*****************************/
 	void SOMSetNbrArcPartant(unsigned int uiNbr);
 
 	/*****************************
 	Methode : Lire Arc Arrivant
 	******************************
-	Entrée : néant
-	Necessité : néant
+	EntrÃ©e : nÃ©ant
+	NecessitÃ© : nÃ©ant
 	Sortie : CArc **
 	Entraine : retourne l'attribut
 	*****************************/
@@ -131,18 +141,18 @@ public:
 	/*****************************
 	Methode : Modifier Arc Arrivant
 	******************************
-	Entrée : CArc ** arc
-	Necessité : néant
-	Sortie : néant
-	Entraine : affecte le paramètre à l'attribut
+	EntrÃ©e : CArc ** arc
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : affecte le paramÃ¨tre Ã  l'attribut
 	*****************************/
 	void SOMSetListArcArrivant(CArc ** arc);
 
 	/*****************************
 	Methode : Lire Arc Partant
 	******************************
-	Entrée : néant
-	Necessité : néant
+	EntrÃ©e : nÃ©ant
+	NecessitÃ© : nÃ©ant
 	Sortie : CArc **
 	Entraine : retourne l'attribut
 	*****************************/
@@ -151,39 +161,39 @@ public:
 	/*****************************
 	Methode : Modifier Arc Partant
 	******************************
-	Entrée : CArc ** arc
-	Necessité : néant
-	Sortie : néant
-	Entraine : affecte le paramètre à l'attribut
+	EntrÃ©e : CArc ** arc
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : affecte le paramÃ¨tre Ã  l'attribut
 	*****************************/
 	void SOMSetListArcPartant(CArc ** arc);
 
 	/*****************************
 	Methode : Ajouter Arc Arrivant
 	******************************
-	Entrée : CArc * pARCArc
-	Necessité : néant
-	Sortie : néant
-	Entraine : affecte le paramètre arc à la liste des arcs
+	EntrÃ©e : CArc * pARCArc
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : affecte le paramÃ¨tre arc Ã  la liste des arcs
 	*****************************/
 	void SOMAddArcArrivant(CArc * pARCArc);
 
 	/*****************************
 	Methode : Ajouter Arc Partant
 	******************************
-	Entrée : CArc * pARCArc
-	Necessité : néant
-	Sortie : néant
-	Entraine : affecte le paramètre arc à la liste des arcs
+	EntrÃ©e : CArc * pARCArc
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
+	Entraine : affecte le paramÃ¨tre arc Ã  la liste des arcs
 	*****************************/
 	void  SOMAddArcPartant(CArc * pARCArc);
 
 	/*****************************
 	Methode : Supprimer Arc Arrivant
 	******************************
-	Entrée : CArc * pARCArc
-	Necessité : néant
-	Sortie : néant
+	EntrÃ©e : CArc * pARCArc
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
 	Entraine : supprime l'arc correspondant
 	*****************************/
 	void SOMSuppArcArrivant(CArc * pARCArc);
@@ -191,9 +201,9 @@ public:
 	/*****************************
 	Methode : Supprimer Arc Partant
 	******************************
-	Entrée : CArc * pARCArc
-	Necessité : néant
-	Sortie : néant
+	EntrÃ©e : CArc * pARCArc
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
 	Entraine : supprime l'arc correspondant
 	*****************************/
 	void  SOMSuppArcPartant(CArc * pARCArc);
@@ -201,8 +211,8 @@ public:
 	/*****************************
 	Methode : Compter le nombre d'arc dans la liste
 	******************************
-	Entrée : CArc ** ppARCList
-	Necessité : néant
+	EntrÃ©e : CArc ** ppARCList
+	NecessitÃ© : nÃ©ant
 	Sortie : uiCompteur
 	Entraine : compte le nombre d'arcs dans la liste et retourne le nombre
 	*****************************/
@@ -211,9 +221,9 @@ public:
 	/*****************************
 	Methode : Vider Sommet
 	******************************
-	Entrée : néant
-	Necessité : néant
-	Sortie : néant
+	EntrÃ©e : nÃ©ant
+	NecessitÃ© : nÃ©ant
+	Sortie : nÃ©ant
 	Entraine : vide un sommet de ses arcs
 	*****************************/
 	void SOMViderSommet();
