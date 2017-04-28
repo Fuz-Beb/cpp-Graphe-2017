@@ -58,6 +58,19 @@ CGraphe::CGraphe(unsigned int uiNbSommets, unsigned int uiNbArcs)
 }
 
 /*****************************
+Surcharge de l'operateur =
+******************************
+Entrée : CGraphe & GRAGraphe
+Necessité : néant
+Sortie : CGraphe &
+Entraine : modification de l'objet a gauche du signe
+*****************************/
+CGraphe & CGraphe::operateur=(CGraphe & GRAGraphe)
+{
+	// To do	
+}
+
+/*****************************
 Destructeur par défaut
 ******************************
 Entrée : néant
