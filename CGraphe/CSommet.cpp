@@ -2,12 +2,12 @@
 #include "CException.h"
 
 /*****************************
-Constructeur par dÃ©faut
+Constructeur par défaut
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : l'objet en cours est initialisÃ©
+Entrée : néant
+Necessité : néant
+Sortie : néant
+Entraine : l'objet en cours est initialisé
 *****************************/
 CSommet::CSommet()
 {
@@ -22,18 +22,18 @@ CSommet::CSommet()
 /*****************************
 Constructeur de recopie
 ******************************
-EntrÃ©e : CSommet & SOMSommet;
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : l'objet en paramÃ¨tre est recopiÃ© et initialisÃ© dans un nouvel objet
+Entrée : CSommet & sommet);
+Necessité : néant
+Sortie : néant
+Entraine : l'objet en paramètre est recopié et initialisé dans un nouvel objet
 *****************************/
 CSommet::CSommet(CSommet & SOMSommet)
 {	
-	// Mise Ã  0 des arcs partant
+	// Mise à 0 des arcs partant
 	uiSOMNbrArcArrivant = SOMSommet.SOMGetNbrArcArrivant();
 	uiSOMNbrArcPartant = SOMSommet.SOMGetNbrArcPartant();
 
-    // Affectation du numÃ©ro
+    // Affectation du numéro
 	uiSOMNum = SOMSommet.SOMGetNum();
 
     // Initialisation
@@ -64,18 +64,18 @@ CSommet::CSommet(CSommet & SOMSommet)
 /*****************************
 Constructeur de confort
 ******************************
-EntrÃ©e : unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * ppqSommetArcPartant
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : l'objet en cours est initialisÃ©
+Entrée : unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * ppqSommetArcPartant
+Necessité : néant
+Sortie : néant
+Entraine : l'objet en cours est initialisé
 *****************************/
 CSommet::CSommet(unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * ppqSommetArcPartant)
 {	
-	// Mise Ã  0 des arcs partant
+	// Mise à 0 des arcs partant
 	uiSOMNbrArcArrivant = 0;
 	uiSOMNbrArcPartant = 0;
 
-	// Affectation du numÃ©ro
+	// Affectation du numéro
 	uiSOMNum = uiNumSommet;
 
 	// Initialisation
@@ -106,8 +106,8 @@ CSommet::CSommet(unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * p
 /*****************************
 Surchage de l'operateur =
 ******************************
-EntrÃ©e : CSommet & SOMSommet
-NecessitÃ© : nÃ©ant
+Entrée : CSommet & SOMSommet
+Necessité : néant
 Sortie : CSommet &
 Entraine : modification de l'objet a gauche du signe
 *****************************/
@@ -116,13 +116,14 @@ CSommet & CSommet::operator=(CSommet & SOMSommet)
 	// To do	
 }
 
+
 /*****************************
-Destructeur par dÃ©faut
+Destructeur par défaut
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : l'objet est dÃ©truit
+Entrée : néant
+Necessité : néant
+Sortie : néant
+Entraine : l'objet est détruit
 *****************************/
 CSommet::~CSommet()
 {
@@ -145,8 +146,8 @@ CSommet::~CSommet()
 /*****************************
 Methode : Lire Numero
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
+Entrée : néant
+Necessité : néant
 Sortie : unsigned int uiDestination
 Entraine : retourne l'attribut
 *****************************/
@@ -158,10 +159,10 @@ unsigned int CSommet::SOMGetNum()
 /*****************************
 Methode : Modifier Numero
 ******************************
-EntrÃ©e : unsigned int uiNum
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : affecte le paramÃ¨tre Ã  l'attribut
+Entrée : unsigned int uiNum
+Necessité : néant
+Sortie : néant
+Entraine : affecte le paramètre à l'attribut
 *****************************/
 void CSommet::SOMSetNum(unsigned int uiNum)
 {
@@ -171,8 +172,8 @@ void CSommet::SOMSetNum(unsigned int uiNum)
 /*****************************
 Methode : Lire Nombre Arc
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
+Entrée : néant
+Necessité : néant
 Sortie : unsigned int uiNbr
 Entraine : retourne l'attribut
 *****************************/
@@ -184,10 +185,10 @@ unsigned int CSommet::SOMGetNbrArcArrivant()
 /*****************************
 Methode : Modifier Nombre Arc
 ******************************
-EntrÃ©e : unsigned int uiNbr
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : affecte le paramÃ¨tre Ã  l'attribut
+Entrée : unsigned int uiNbr
+Necessité : néant
+Sortie : néant
+Entraine : affecte le paramètre à l'attribut
 *****************************/
 void CSommet::SOMSetNbrArcArrivant(unsigned int uiNbr)
 {
@@ -197,8 +198,8 @@ void CSommet::SOMSetNbrArcArrivant(unsigned int uiNbr)
 /*****************************
 Methode : Lire Nombre Arc
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
+Entrée : néant
+Necessité : néant
 Sortie : unsigned int uiNbr
 Entraine : retourne l'attribut
 *****************************/
@@ -210,10 +211,10 @@ unsigned int CSommet::SOMGetNbrArcPartant()
 /*****************************
 Methode : Modifier Nombre Arc
 ******************************
-EntrÃ©e : unsigned int uiNbr
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : affecte le paramÃ¨tre Ã  l'attribut
+Entrée : unsigned int uiNbr
+Necessité : néant
+Sortie : néant
+Entraine : affecte le paramètre à l'attribut
 *****************************/
 void CSommet::SOMSetNbrArcPartant(unsigned int uiNbr)
 {
@@ -223,8 +224,8 @@ void CSommet::SOMSetNbrArcPartant(unsigned int uiNbr)
 /*****************************
 Methode : Lire Arc Arrivant
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
+Entrée : néant
+Necessité : néant
 Sortie : CArc **
 Entraine : retourne l'attribut
 *****************************/
@@ -236,22 +237,22 @@ CArc ** CSommet::SOMGetListArcArrivant()
 /*****************************
 Methode : Modifier Arc Arrivant
 ******************************
-EntrÃ©e : CArc ** arc
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : affecte le paramÃ¨tre Ã  l'attribut
+Entrée : CArc ** arc
+Necessité : néant
+Sortie : néant
+Entraine : affecte le paramètre à l'attribut
 *****************************/
-void CSommet::SOMSetListArcArrivant(CArc ** ppARCList)
+void CSommet::SOMSetListArcArrivant(CArc ** arc)
 {
-	ppqSOMArcArrivant = ppARCList;
+	ppqSOMArcArrivant = arc;
 	SOMCompterArc(ppqSOMArcArrivant);
 }
 
 /*****************************
 Methode : Lire Arc Partant
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
+Entrée : néant
+Necessité : néant
 Sortie : CArc **
 Entraine : retourne l'attribut
 *****************************/
@@ -263,31 +264,31 @@ CArc ** CSommet::SOMGetListArcPartant()
 /*****************************
 Methode : Modifier Arc Partant
 ******************************
-EntrÃ©e : CArc ** ppARCList
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : affecte le paramÃ¨tre Ã  l'attribut
+Entrée : CArc ** arc
+Necessité : néant
+Sortie : néant
+Entraine : affecte le paramètre à l'attribut
 *****************************/
-void CSommet::SOMSetListArcPartant(CArc ** ppARCList)
+void CSommet::SOMSetListArcPartant(CArc ** arc)
 {
-	ppqSOMArcPartant = ppARCList;
+	ppqSOMArcPartant = arc;
 	SOMCompterArc(ppqSOMArcPartant);
 }
 
 /*****************************
 Methode : Ajouter Arc Arrivant
 ******************************
-EntrÃ©e : CArc * pARCArc
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : affecte le paramÃ¨tre arc Ã  la liste des arcs
+Entrée : CArc * pARCArc
+Necessité : néant
+Sortie : néant
+Entraine : affecte le paramètre arc à la liste des arcs
 *****************************/
 void CSommet::SOMAddArcArrivant(CArc * pARCArc)
 {
 	if (pARCArc == nullptr)
-		throw new CException(ERREURARGS, "L'argument arc ne peut pas Ãªtre nul");
+		throw new CException(ERREURARGS, "L'argument arc ne peut pas être nul");
 
-	// Allocation pour la premiÃ¨re fois
+	// Allocation pour la première fois
 	if(ppqSOMArcArrivant == nullptr) {
 		// Allocation des arcs arrivant
 		ppqSOMArcArrivant = (CArc **)malloc(sizeof(CArc *));
@@ -313,17 +314,17 @@ void CSommet::SOMAddArcArrivant(CArc * pARCArc)
 /*****************************
 Methode : Ajouter Arc Parant
 ******************************
-EntrÃ©e : CArc * pARCArc
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : affecte le paramÃ¨tre arc Ã  la liste des arcs
+Entrée : CArc * pARCArc
+Necessité : néant
+Sortie : néant
+Entraine : affecte le paramètre arc à la liste des arcs
 *****************************/
 void CSommet::SOMAddArcPartant(CArc * pARCArc)
 {
 	if (pARCArc == nullptr)
-		throw new CException(ERREURARGS, "L'argument arc ne peut pas Ãªtre nul");
+		throw new CException(ERREURARGS, "L'argument arc ne peut pas être nul");
 
-	// Allocation pour la premiÃ¨re fois
+	// Allocation pour la première fois
 	if(ppqSOMArcPartant == nullptr) {
 		// Allocation des arcs arrivant
 		ppqSOMArcPartant = (CArc **)malloc(sizeof(CArc *));
@@ -350,22 +351,22 @@ void CSommet::SOMAddArcPartant(CArc * pARCArc)
 /*****************************
 Methode : Compter le nombre d'arc dans la liste
 ******************************
-EntrÃ©e : CArc ** ppARCListArc
-NecessitÃ© : nÃ©ant
+Entrée : CArc ** ARCListArc
+Necessité : néant
 Sortie : uiCompteur
 Entraine : compte le nombre d'arcs dans la liste et retourne le nombre
 *****************************/
-unsigned int CSommet::SOMCompterArc(CArc ** ppARCListArc) 
+unsigned int CSommet::SOMCompterArc(CArc ** ARCListArc) 
 {
 	unsigned int uiCompteur = 0;
 
-	if(ppARCListArc == nullptr)
+	if(ARCListArc == nullptr)
 		return 0;
 
-	if(ppARCListArc[0] != nullptr)
+	if(ARCListArc[0] != nullptr)
 		uiCompteur = 1;
 
-	while(ppARCListArc[uiCompteur + 1] != nullptr) {
+	while(ARCListArc[uiCompteur + 1] != nullptr) {
 		uiCompteur++;
 	}
 
@@ -375,9 +376,9 @@ unsigned int CSommet::SOMCompterArc(CArc ** ppARCListArc)
 /*****************************
 Methode : Vider Sommet
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
+Entrée : néant
+Necessité : néant
+Sortie : néant
 Entraine : vide un sommet de ses arcs
 *****************************/
 void CSommet::SOMViderSommet()
@@ -385,20 +386,13 @@ void CSommet::SOMViderSommet()
 	unsigned int uiBoucle = 0;
 
 	// Boucle de suppression des arcs arrivant
-	while(uiBoucle != uiSOMNbrArcArrivant) {
+	for (uiBoucle = 0 ; uiBoucle < uiSOMNbrArcArrivant ; uiBoucle++)
 		delete(ppqSOMArcArrivant[uiBoucle]);
-		uiBoucle++;
-	}
-
 	uiSOMNbrArcArrivant = 0;
 
-	uiBoucle = 0;
-
 	// Boucle de suppression des arcs partant
-	while(uiBoucle != uiSOMNbrArcPartant) {
+	for (uiBoucle = 0 ; uiBoucle < uiSOMNbrArcPartant ; uiBoucle++)
 		delete(ppqSOMArcPartant[uiBoucle]);
-		uiBoucle++;
-	}
-
 	uiSOMNbrArcPartant = 0;
 }
+
