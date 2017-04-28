@@ -108,7 +108,7 @@ Surchage de l'operateur =
 ******************************
 Entrée : CSommet & SOMSommet
 Necessité : néant
-Sortie : néant
+Sortie : CSommet &
 Entraine : modification de l'objet a gauche du signe
 *****************************/
 CSommet & CSommet::operator=(CSommet & SOMSommet)
