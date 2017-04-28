@@ -1,12 +1,12 @@
 #include "CException.h"
 
 /*****************************
-Constructeur par dÃ©faut
+Constructeur par défaut
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : l'objet en cours est initialisÃ©
+Entrée : néant
+Necessité : néant
+Sortie : néant
+Entraine : l'objet en cours est initialisé
 *****************************/
 CException::CException()
 {
@@ -15,12 +15,12 @@ CException::CException()
 }
 
 /*****************************
-Constructeur Ã  deux arguments
+Constructeur à deux arguments
 ******************************
-EntrÃ©e : unsigned int uiCodeErreur, char * psMessageErreur
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : le paramÃ¨tre est recopiÃ© et ainsi l'objet en cours est initialisÃ©
+Entrée : unsigned int uiCodeErreur, char * psMessageErreur
+Necessité : néant
+Sortie : néant
+Entraine : le paramètre est recopié et ainsi l'objet en cours est initialisé
 *****************************/
 CException::CException(unsigned int uiCodeErreur, char * psMessageErreur)
 {
@@ -36,10 +36,10 @@ CException::CException(unsigned int uiCodeErreur, char * psMessageErreur)
 /*****************************
 Constructeur de recopie
 ******************************
-EntrÃ©e : CException & EXCObjet
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : l'object en cours en initialisÃ© avec les mÃªme attributs que l'objet passÃ© en paramÃ¨tre
+Entrée : CException & EXCObjet
+Necessité : néant
+Sortie : néant
+Entraine : l'object en cours en initialisé avec les même attributs que l'objet passé en paramètre
 *****************************/
 CException::CException(CException & EXCObjet)
 {
@@ -53,12 +53,12 @@ CException::CException(CException & EXCObjet)
 }
 
 /*****************************
-Destructeur par dÃ©faut
+Destructeur par défaut
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : l'objet en cours est dÃ©truit
+Entrée : néant
+Necessité : néant
+Sortie : néant
+Entraine : l'objet en cours est détruit
 *****************************/
 CException::~CException()
 {
@@ -69,8 +69,8 @@ CException::~CException()
 /*****************************
 Methode : Lecture du code d'erreur
 *****************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
+Entrée : néant
+Necessité : néant
 Sortie : unsigned int
 Entraine : retourne le code d'erreur
 *****************************/
@@ -82,9 +82,9 @@ unsigned int CException::EXCLectureCode()
 /*****************************
 Methode : Modification du code d'erreur
 ******************************
-EntrÃ©e : unsigned int uiCodeErreur
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
+Entrée : unsigned int uiCodeErreur
+Necessité : néant
+Sortie : néant
 Entraine : modification du code d'erreur
 *****************************/
 void CException::EXCEcritureCode(unsigned int uiCodeErreur)
@@ -95,9 +95,9 @@ void CException::EXCEcritureCode(unsigned int uiCodeErreur)
 /*****************************
 Methode : Lecture du message d'erreur
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
-Sortie : char *
+Entrée : néant
+Necessité : néant
+Sortie : néant
 Entraine : affiche le message d'erreur
 *****************************/
 char * CException::EXCLectureMessage()
@@ -108,9 +108,9 @@ char * CException::EXCLectureMessage()
 /*****************************
 Methode : Modification du message d'erreur
 ******************************
-EntrÃ©e : char * psMessage
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
+Entrée : char * psMessage
+Necessité : néant
+Sortie : néant
 Entraine : modification du message d'erreur
 *****************************/
 void CException::EXCEcritureMessage(char * psMessage)

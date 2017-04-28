@@ -16,32 +16,32 @@ public:
 	// Constructeurs / Destructeurs
 
 	/*****************************
-	Constructeur par dÃ©faut
+	Constructeur par défaut
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : l'objet en cours est initialisÃ©
+	Entrée : néant
+	Necessité : néant
+	Sortie : néant
+	Entraine : l'objet en cours est initialisé
 	*****************************/
 	explicit CParse();
 
 	/*****************************
 	Constructeur de confort
 	******************************
-	EntrÃ©e : char * psChemin
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : l'objet en cours est initialisÃ©
+	Entrée : char * psChemin
+	Necessité : néant
+	Sortie : néant
+	Entraine : l'objet en cours est initialisé
 	*****************************/
 	explicit CParse(char * psChemin);
 
 	/*****************************
-	Destructeur par dÃ©faut
+	Destructeur par défaut
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : l'objet est dÃ©truit
+	Entrée : néant
+	Necessité : néant
+	Sortie : néant
+	Entraine : l'objet est détruit
 	*****************************/
 	~CParse();
 
@@ -50,8 +50,8 @@ public:
 	/*****************************
 	Methode : Lire Chemin
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : nÃ©ant
+	Entrée : néant
+	Necessité : néant
 	Sortie : char *
 	Entraine : retourne le chemin de l'attribut
 	*****************************/
@@ -60,9 +60,9 @@ public:
 	/*****************************
 	Methode : Modifier Chemin
 	******************************
-	EntrÃ©e : char * sParam
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
+	Entrée : char * sParam
+	Necessité : néant
+	Sortie : néant
 	Entraine : modification de l'attribut sPARChemin
 	*****************************/
 	void PARModifierChemin(char * psParam);
@@ -70,9 +70,9 @@ public:
 	/*****************************
 	Methode : Ouvrir Fichier
 	******************************
-	EntrÃ©e : char * sChaine
-	NecessitÃ© : Fichier
-	Sortie : nÃ©ant
+	Entrée : char * sChaine
+	Necessité : Fichier
+	Sortie : néant
 	Entraine : ouverture un fichier
 	*****************************/
 	void PAROuvrirFichier(char * psParam);
@@ -80,70 +80,70 @@ public:
 	/*****************************
 	Methode : Fermer Fichier
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
+	Entrée : néant
+	Necessité : néant
+	Sortie : néant
 	Entraine : Fermeture du fichier
 	*****************************/
 	void PARFermerFicher();
 
-	// MÃ©thodes
+	// Méthodes
 
 	/*****************************
 	Methode : Lire Ligne
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : MÃ©thode Traiter fichier / Ouvrir fichier
+	Entrée : néant
+	Necessité : Méthode Traiter fichier / Ouvrir fichier
 	Sortie : char *
-	Entraine : lecture d'une ligne du fichier et retourne sur le tas une chaÃ®ne
+	Entraine : lecture d'une ligne du fichier et retourne sur le tas une chaîne
 	*****************************/
 	char * PARLireLigne();
 
 	/*****************************
 	Methode : SubString
 	******************************
-	EntrÃ©e : char * sParam, unsigned int uiDebut, unsigned int uiTaille
-	NecessitÃ© : nÃ©ant
+	Entrée : char * sParam, unsigned int uiDebut, unsigned int uiTaille
+	Necessité : néant
 	Sortie : char *
-	Entraine : permet d'extraire une chaÃ®ne d'une position Ã  une autre
+	Entraine : permet d'extraire une chaîne d'une position à une autre
 	*****************************/
 	char * PARSubString(char * psParam, unsigned int uiDebut, unsigned int uiTaille);
 
 	/*****************************
 	Methode : Concatener deux chaines
 	******************************
-	EntrÃ©e : const char * sStr1, const char * sStr2
-	NecessitÃ© : nÃ©ant
+	Entrée : const char * sStr1, const char * sStr2
+	Necessité : néant
 	Sortie : char *
-	Entraine : retourne sur le tas la concatenation des deux chaÃ®nes
+	Entraine : retourne sur le tas la concatenation des deux chaînes
 	*****************************/
 	char * CParse::PARConcatenateString(const char * psStr1, const char * psStr2);
 
 	/*****************************
 	Methode : Convertir Chaine Minuscule
 	******************************
-	EntrÃ©e : char * psParam
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : convertir la chaine en paramÃ¨tre en minuscule
+	Entrée : char * sChaine
+	Necessité : néant
+	Sortie : néant
+	Entraine : convertir la chaine en paramètre en minuscule
 	*****************************/
 	void PARConvertirStrMinusc(char * psParam);
 
 	/*****************************
 	Methode : Convertir un char en minuscule
 	******************************
-	EntrÃ©e : char cParam
-	NecessitÃ© : MÃ©thode Ouvrir fichier
+	Entrée : char cParam
+	Necessité : Méthode Ouvrir fichier
 	Sortie : char
 	Entraine : Conversion d'un char en char minuscule
 	*****************************/
 	char PARConvertirCharMinusc(char cParam);
 
 	/*****************************
-	Methode : Rechercher un caractÃ¨re dans une chaine
+	Methode : Rechercher un caractère dans une chaine
 	******************************
-	EntrÃ©e : char sCaractere, char * psChaine
-	NecessitÃ© : MÃ©thode Ouvrir fichier
+	Entrée : char sCaractere, char * psChaine
+	Necessité : Méthode Ouvrir fichier
 	Sortie : int
 	Entraine : retourne la position du caractere
 	*****************************/
@@ -152,19 +152,19 @@ public:
 	/*****************************
 	Methode : Recuperer la chaine presente apres le premier caractere '=' rencontre
 	******************************
-	EntrÃ©e : char * psChaineAvantEgal, char * sBuffer
-	NecessitÃ© : MÃ©thode Ouvrir fichier
+	Entrée : char * psChaineAvantEgal, char * sBuffer
+	Necessité : Méthode Ouvrir fichier
 	Sortie : int
 	Entraine : retourne le int apres le caractere '='
 	*****************************/
 	int PARValeurApresSigneEgal(char * psChaineAvantEgal, char * sBuffer);
 
 	/*****************************
-	Methode : Compare deux chaines de caractÃ¨res
+	Methode : Compare deux chaines de caractères
 	******************************
-	EntrÃ©e : char * psChaineUn, char * psChaineDeux
-	NecessitÃ© : MÃ©thode Ouvrir fichier
-	Sortie : int
+	Entrée : char * psChaineUn, char * psChaineDeux
+	Necessité : Méthode Ouvrir fichier
+	Sortie : boolean
 	Entraine : retourne true si les deux chaines sont identiques et faux sinon
 	*****************************/
 	int PARCompareChaine(char * psChaineUn, char * psChaineDeux);

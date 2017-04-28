@@ -3,12 +3,12 @@
 #pragma warning(disable:4996)
 
 /*****************************
-Constructeur par dÃ©faut
+Constructeur par défaut
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : l'objet en cours est initialisÃ©
+Entrée : néant
+Necessité : néant
+Sortie : néant
+Entraine : l'objet en cours est initialisé
 *****************************/
 CParse::CParse()
 {
@@ -19,10 +19,10 @@ CParse::CParse()
 /*****************************
 Constructeur de confort
 ******************************
-EntrÃ©e : char * psChemin
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : l'objet en cours est initialisÃ©
+Entrée : char * psChemin
+Necessité : néant
+Sortie : néant
+Entraine : l'objet en cours est initialisé
 *****************************/
 CParse::CParse(char * psChemin)
 {
@@ -31,12 +31,12 @@ CParse::CParse(char * psChemin)
 }
 
 /*****************************
-Destructeur par dÃ©faut
+Destructeur par défaut
 *****************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : l'objet est dÃ©truit
+Entrée : néant
+Necessité : néant
+Sortie : néant
+Entraine : l'objet est détruit
 *****************************/
 CParse::~CParse()
 {
@@ -47,8 +47,8 @@ CParse::~CParse()
 /*****************************
 Methode : Lire Chemin
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
+Entrée : néant
+Necessité : néant
 Sortie : char *
 Entraine : retourne le chemin de l'attribut
 *****************************/
@@ -60,9 +60,9 @@ char * CParse::PARLireChemin()
 /*****************************
 Methode : Modifier Chemin
 ******************************
-EntrÃ©e : char * sParam
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
+Entrée : char * sParam
+Necessité : néant
+Sortie : néant
 Entraine : modification de l'attribut sPARChemin
 *****************************/
 void CParse::PARModifierChemin(char * psParam)
@@ -83,9 +83,9 @@ void CParse::PARModifierChemin(char * psParam)
 /*****************************
 Methode : Ouvrir Fichier
 *****************************
-EntrÃ©e : char * sChaine
-NecessitÃ© : Fichier
-Sortie : nÃ©ant
+Entrée : char * sChaine
+Necessité : Fichier
+Sortie : néant
 Entraine : ouverture un fichier
 *****************************/
 void CParse::PAROuvrirFichier(char * psParam)
@@ -107,9 +107,9 @@ void CParse::PAROuvrirFichier(char * psParam)
 /*****************************
 Methode : Fermer Fichier
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
+Entrée : néant
+Necessité : néant
+Sortie : néant
 Entraine : Fermeture du fichier
 *****************************/
 void CParse::PARFermerFicher()
@@ -121,22 +121,22 @@ void CParse::PARFermerFicher()
 /*****************************
 Methode : Lire Ligne
 ******************************
-EntrÃ©e : nÃ©ant
-NecessitÃ© : MÃ©thode Traiter fichier / Ouvrir fichier
+Entrée : néant
+Necessité : Méthode Traiter fichier / Ouvrir fichier
 Sortie : char *
-Entraine : lecture d'une ligne du fichier et retourne sur le tas une chaÃ®ne
+Entraine : lecture d'une ligne du fichier et retourne sur le tas une chaîne
 *****************************/
 char * CParse::PARLireLigne()
 {
 	try {
-		// Position de dÃ©part
+		// Position de départ
 		unsigned int uiCurseurInitial = ftell(pPARFichier);
 		unsigned int uiSizeMaxBuffer = 0;
 
-		// Mise du curseur Ã  la fin du fichier pour le calcul de la taille de la chaine
+		// Mise du curseur à la fin du fichier pour le calcul de la taille de la chaine
 		fseek(pPARFichier, 0, SEEK_END);
 
-		// RÃ©cupÃ©ration de la taille maximum du buffer
+		// Récupération de la taille maximum du buffer
 		uiSizeMaxBuffer = ftell(pPARFichier) - uiCurseurInitial + 1;
 	
 		// Allocation de la chaine avec la "bonne taille"
@@ -146,13 +146,13 @@ char * CParse::PARLireLigne()
 
 		fseek(pPARFichier, uiCurseurInitial, SEEK_SET);
 
-		// RÃ©cupÃ©ration de la ligne
+		// Récupération de la ligne
 		psBuffer = fgets(psBuffer, uiSizeMaxBuffer, pPARFichier);
 	
 		if (psBuffer == nullptr)
 			throw CException(ECHECLECTURELIGNEFICHIER, "Erreur lors de la lecture d'une ligne du fichier");
 
-		// Mise Ã  l'Ã©chelle de la chaine retournÃ©e
+		// Mise à l'échelle de la chaine retournée
 		psBuffer = (char*) realloc(psBuffer, sizeof(char) * (strlen(psBuffer) + 1));
 		if (psBuffer == nullptr)
 			throw CException(ECHECALLOCATION, "Echec de l'allocation");
@@ -167,10 +167,10 @@ char * CParse::PARLireLigne()
 /*****************************
 Methode : SubString
 ******************************
-EntrÃ©e : char * sParam, unsigned int uiDebut, unsigned int uiTaille
-NecessitÃ© : nÃ©ant
+Entrée : char * sParam, unsigned int uiDebut, unsigned int uiTaille
+Necessité : néant
 Sortie : char *
-Entraine : permet d'extraire une chaÃ®ne d'une position Ã  une autre
+Entraine : permet d'extraire une chaîne d'une position à une autre
 *****************************/
 char * CParse::PARSubString(char * psParam, unsigned int uiDebut, unsigned int uiTaille)
 {
@@ -194,10 +194,10 @@ char * CParse::PARSubString(char * psParam, unsigned int uiDebut, unsigned int u
 /*****************************
 Methode : Concatener deux chaines
 ******************************
-EntrÃ©e : const char * sStr1, const char * sStr2
-NecessitÃ© : nÃ©ant
+Entrée : const char * sStr1, const char * sStr2
+Necessité : néant
 Sortie : char *
-Entraine : retourne sur le tas la concatenation des deux chaÃ®nes
+Entraine : retourne sur le tas la concatenation des deux chaînes
 *****************************/
 char * CParse::PARConcatenateString(const char * psStr1, const char * psStr2) 
 {
@@ -224,10 +224,10 @@ char * CParse::PARConcatenateString(const char * psStr1, const char * psStr2)
 /*****************************
 Methode : Convertir Chaine Minuscule
 ******************************
-EntrÃ©e : char * psParam
-NecessitÃ© : nÃ©ant
-Sortie : nÃ©ant
-Entraine : convertir la chaine en paramÃ¨tre en minuscule
+Entrée : char * sChaine
+Necessité : néant
+Sortie : néant
+Entraine : convertir la chaine en paramètre en minuscule
 *****************************/
 void CParse::PARConvertirStrMinusc(char * psParam)
 {
@@ -242,8 +242,8 @@ void CParse::PARConvertirStrMinusc(char * psParam)
 /*****************************
 Methode : Convertir un char en minuscule
 ******************************
-EntrÃ©e : char cParam
-NecessitÃ© : MÃ©thode Ouvrir fichier
+Entrée : char cParam
+Necessité : Méthode Ouvrir fichier
 Sortie : char
 Entraine : Conversion d'un char en char minuscule
 *****************************/
@@ -260,10 +260,10 @@ char CParse::PARConvertirCharMinusc(char cParam)
 }
 
 /*****************************
-Methode : Rechercher un caractÃ¨re dans une chaine
+Methode : Rechercher un caractère dans une chaine
 ******************************
-EntrÃ©e : char sCaractere, char * psChaine
-NecessitÃ© : MÃ©thode Ouvrir fichier
+Entrée : char sCaractere, char * psChaine
+Necessité : Méthode Ouvrir fichier
 Sortie : int
 Entraine : retourne la position du caractere
 *****************************/
@@ -285,21 +285,21 @@ int CParse::PARRechercheCaractere(char sCaractere, char * psChaine)
 /*****************************
 Methode : Recuperer la chaine presente apres le premier caractere '=' rencontre
 ******************************
-EntrÃ©e : char * psChaineAvantEgal, char * sBuffer
-NecessitÃ© : MÃ©thode Ouvrir fichier
+Entrée : char * psChaineAvantEgal, char * sBuffer
+Necessité : Méthode Ouvrir fichier
 Sortie : int
 Entraine : retourne le int apres le caractere '='
 *****************************/
 int CParse::PARValeurApresSigneEgal(char * psChaineAvantEgal, char * sBuffer) {
 
-	// DÃ©clarations des variables
+	// Déclarations des variables
 	char * sRetour = nullptr;
 	unsigned int uiReturnValue;
 
-	// RÃ©cupÃ©ration du prÃ©fixe a gauche du signe '='
+	// Récupération du préfixe a gauche du signe '='
 	sRetour = PARSubString(sBuffer, 0, strlen(psChaineAvantEgal));
 
-	// Comparaison du prÃ©fixe avec celui donnÃ© en paramÃ¨tre
+	// Comparaison du préfixe avec celui donné en paramètre
 	if(strcmp(sRetour, psChaineAvantEgal) != 0) {
 		delete(sBuffer);
 		delete(sRetour);
@@ -308,7 +308,7 @@ int CParse::PARValeurApresSigneEgal(char * psChaineAvantEgal, char * sBuffer) {
 
 	delete(sRetour);
 
-	// RÃ©cupÃ©ration de la valeur situÃ©e Ã  droite du signe '='
+	// Récupération de la valeur située à droite du signe '='
 	sRetour = PARSubString(sBuffer, PARRechercheCaractere('=', sBuffer) + 1, strlen(sBuffer) - strlen(psChaineAvantEgal));
 
 	if(sRetour == NULL) {
@@ -325,17 +325,17 @@ int CParse::PARValeurApresSigneEgal(char * psChaineAvantEgal, char * sBuffer) {
 }
 
 /*****************************
-Methode : Compare deux chaines de caractÃ¨res
+Methode : Compare deux chaines de caractères
 ******************************
-EntrÃ©e : char * psChaineUn, char * psChaineDeux
-NecessitÃ© : MÃ©thode Ouvrir fichier
-Sortie : int
+Entrée : char * psChaineUn, char * psChaineDeux
+Necessité : Méthode Ouvrir fichier
+Sortie : boolean
 Entraine : retourne true si les deux chaines sont identiques et faux sinon
 *****************************/
 int CParse::PARCompareChaine(char * psChaineUn, char * psChaineDeux)
 {
 	if (psChaineUn == nullptr || psChaineDeux == nullptr)
-		throw CException(ERREURARGS, "Les deux chaines passÃ©es en paramÃ¨tre ne peuvent pas Ãªtre null");
+		throw CException(ERREURARGS, "Les deux chaines passées en paramètre ne peuvent pas être null");
 
 	PARConvertirStrMinusc(psChaineUn);
 

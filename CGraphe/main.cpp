@@ -16,7 +16,7 @@ void main(unsigned int argc, char *argv[])
 	}
 
 	// Allocations
-	CGrapheOperation ** ppqGRAGraphe = ppqGRAGraphe = (CGrapheOperation **) malloc (sizeof(CGrapheOperation *) * (argc - 1));
+	CGrapheOperation ** ppqGRAGraphe = (CGrapheOperation **) malloc (sizeof(CGrapheOperation *) * (argc - 1));
 	if (ppqGRAGraphe == nullptr)
 		throw CException(ECHECALLOCATION, "Echec de l'allocation");
 	CGrapheOperation ** ppqGRAGrapheInverse = (CGrapheOperation **) malloc (sizeof(CGrapheOperation *) * (argc - 1));
@@ -38,7 +38,7 @@ void main(unsigned int argc, char *argv[])
 			ppqGRAGraphe[uiBoucleTableau] = ppqPARparse->PAGRetournerGraphe();
 			ppqGRAGrapheInverse[uiBoucleTableau] = ppqGRAGraphe[uiBoucleTableau]->GRAInverserGraphe();
 			printf("\n\n ------ GRAPHE INVERSE ------ \n\n");
-			ppqGRAGraphe[uiBoucleTableau]->GRAAfficherGraphe();
+			ppqGRAGrapheInverse[uiBoucleTableau]->GRAAfficherGraphe();
 		}
 	} catch (CException & EXCObjet) {
 		std::cerr << "Code d'erreur : " << EXCObjet.EXCLectureCode() << std::endl << EXCObjet.EXCLectureMessage() << std::endl;
@@ -57,4 +57,3 @@ void main(unsigned int argc, char *argv[])
 	delete(ppqGRAGraphe);
 	delete(ppqGRAGrapheInverse);
 }
-

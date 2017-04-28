@@ -65,25 +65,27 @@ Necessité : néant
 Sortie : CGraphe &
 Entraine : modification de l'objet a gauche du signe
 *****************************/
-CGraphe & CGraphe::operateur=(CGraphe & GRAGraphe)
+CGraphe & CGraphe::operator=(CGraphe & GRAGraphe)
 {
 	// Allocation de la liste sommet
-	if (ppqGRASommets == nullptr)
-		ppqGRASommets = (CSommet **)malloc(sizeof(CSommet*) * GRAGraphe.uiGRANbSommets);
-	else
-		ppqGRASommets = (CSommet **) realloc (ppqGRASommets, sizeof(CSommet*) * GRAGraphe.uiGRANbSommets);
+	if (GRAGraphe.GRAGetNbSommets() > 0) {
+		if (ppqGRASommets == nullptr)
+			ppqGRASommets = (CSommet **)malloc(sizeof(CSommet*) * GRAGraphe.uiGRANbSommets);
+		else
+			ppqGRASommets = (CSommet **) realloc (ppqGRASommets, sizeof(CSommet*) * GRAGraphe.uiGRANbSommets);
 	
-	if(ppqGRASommets == nullptr)
-		throw CException(ECHECALLOCATION, "Echec de l'allocation");
+		if(ppqGRASommets == nullptr)
+			throw CException(ECHECALLOCATION, "Echec de l'allocation");
 
-	for(unsigned int uiBoucle = 0 ; uiBoucle < GRAGraphe.uiGRANbSommets ; uiBoucle++) {
-		ppqGRASommets[uiBoucle] = new CSommet(*GRAGraphe.ppqGRASommets[uiBoucle]);
+		for(unsigned int uiBoucle = 0 ; uiBoucle < GRAGraphe.uiGRANbSommets ; uiBoucle++)
+			ppqGRASommets[uiBoucle] = new CSommet(*GRAGraphe.ppqGRASommets[uiBoucle]);
+		
 	}
-
-	uiGRANbSommets = GRAGraphe.uiGRANbSommets;
-	uiGRANbArcs = GRAGraphe.uiGRANbArcs;
-
-	return *this;	
+	else {
+		uiGRANbSommets = GRAGraphe.uiGRANbSommets;
+		uiGRANbArcs = GRAGraphe.uiGRANbArcs;
+	}
+	return *this;
 }
 
 /*****************************

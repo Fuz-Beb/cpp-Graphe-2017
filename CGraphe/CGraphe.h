@@ -15,52 +15,52 @@ public:
 	// Constructeurs / Destructeurs
 
 	/*****************************
-	Constructeur par dÃ©faut
+	Constructeur par défaut
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : l'objet en cours est initialisÃ©
+	Entrée : néant
+	Necessité : néant
+	Sortie : néant
+	Entraine : l'objet en cours est initialisé
 	*****************************/
 	explicit CGraphe();
 
 	/*****************************
 	Constructeur de recopie
 	******************************
-	EntrÃ©e : CSommet & sommet;
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : l'objet en paramÃ¨tre est recopiÃ© et initialisÃ© dans un nouvel objet
+	Entrée : CSommet & sommet);
+	Necessité : néant
+	Sortie : néant
+	Entraine : l'objet en paramètre est recopié et initialisé dans un nouvel objet
 	*****************************/
 	explicit CGraphe(CGraphe & graphe);
 
 	/*****************************
 	Constructeur de confort
 	******************************
-	EntrÃ©e : unsigned int uiNbSommets, unsigned int uiNbArcs
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : l'objet en cours est initialisÃ©
+	Entrée : unsigned int uiNbSommets, unsigned int uiNbArcs
+	Necessité : néant
+	Sortie : néant
+	Entraine : l'objet en cours est initialisé
 	*****************************/
 	explicit CGraphe(unsigned int uiNbSommets, unsigned int uiNbArcs);
-	
+
 	/*****************************
 	Surcharge de l'operateur =
 	******************************
-	EntrÃ©e : CGraphe & GRAGraphe
-	NecessitÃ© : nÃ©ant
+	Entrée : CGraphe & GRAGraphe
+	Necessité : néant
 	Sortie : CGraphe &
 	Entraine : modification de l'objet a gauche du signe
 	*****************************/
-	CGraphe & CGraphe::operateur=(CGraphe & GRAGraphe);
+	CGraphe & operator=(CGraphe & GRAGraphe);
 
 	/*****************************
-	Destructeur par dÃ©faut
+	Destructeur par défaut
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : l'objet est dÃ©truit
+	Entrée : néant
+	Necessité : néant
+	Sortie : néant
+	Entraine : l'objet est détruit
 	*****************************/
 	~CGraphe();
 
@@ -69,48 +69,18 @@ public:
 	/*****************************
 	Methode : Lire Sommets
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : nÃ©ant
-	Sortie : CSommet **
+	Entrée : néant
+	Necessité : néant
+	Sortie : unsigned int uiGRANbSommets
 	Entraine : retourne l'attribut
 	*****************************/
 	CSommet ** CGraphe::GRAGetSommets();
 
 	/*****************************
-	Methode : Ajouter Sommet
-	******************************
-	EntrÃ©e : unsigned int uiSommet, CArc * pqArrivant, CArc * pqPartant
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : ajoute un nouveau sommet au graphe
-	*****************************/
-	void GRAAjoutSommet(unsigned int uiSommet, CArc * pqArrivant, CArc * pqPartant);
-
-	/*****************************
-	Methode : Supprimer Sommet
-	******************************
-	EntrÃ©e : CSommet * pSOMSommet
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : supprime un sommet au graphe
-	*****************************/
-	void GRASupprimerSommet(CSommet * pSOMSommet);
-
-	/*****************************
-	Methode : Modifier Sommet
-	******************************
-	EntrÃ©e : unsigned int uiNum, CSommet * pSOMSommet
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : modifie un sommet au graphe
-	*****************************/
-	void GRAModifierSommet(unsigned int uiNum, CSommet * pSOMSommet);
-
-	/*****************************
 	Methode : Lire Nombre Sommets
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : nÃ©ant
+	Entrée : néant
+	Necessité : néant
 	Sortie : unsigned int uiGRANbSommets
 	Entraine : retourne l'attribut
 	*****************************/
@@ -119,18 +89,18 @@ public:
 	/*****************************
 	Methode : Modifier Nombre Sommets
 	******************************
-	EntrÃ©e : unsigned int uiNbSommets
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : affecte le paramÃ¨tre Ã  l'attribut
+	Entrée : unsigned int uiNbSommets
+	Necessité : néant
+	Sortie : néant
+	Entraine : affecte le paramètre à l'attribut
 	*****************************/
 	void GRASetNbSommets(unsigned int uiNbSommets);
 
 	/*****************************
 	Methode : Lire Nombre Arcs
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : nÃ©ant
+	Entrée : néant
+	Necessité : néant
 	Sortie : unsigned int uiGRANbArcs
 	Entraine : retourne l'attribut
 	*****************************/
@@ -139,48 +109,78 @@ public:
 	/*****************************
 	Methode : Modifier Nombre Arcs
 	******************************
-	EntrÃ©e : unsigned int uiNbArcs
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : affecte le paramÃ¨tre Ã  l'attribut
+	Entrée : unsigned int uiNbArcs
+	Necessité : néant
+	Sortie : néant
+	Entraine : affecte le paramètre à l'attribut
 	*****************************/
 	void GRASetNbArcs(unsigned int uiNbArcs);
 
 	/*****************************
-	Methode : RÃ©cupÃ©rer Sommet
+	Methode : Ajouter Sommet
 	******************************
-	EntrÃ©e : unsigned int uiSommet
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
-	Entraine : rÃ©cupÃ¨re un sommet du graphe
+	Entrée : unsigned int uiSommet, CArc * ppqArrivant, CArc * ppqPartant
+	Necessité : néant
+	Sortie : néant
+	Entraine : ajoute un nouveau sommet au graphe
+	*****************************/
+	void GRAAjoutSommet(unsigned int uiSommet, CArc * ppqArrivant, CArc * ppqPartant);
+
+	/*****************************
+	Methode : Supprimer Sommet
+	******************************
+	Entrée : CSommet * sommet
+	Necessité : néant
+	Sortie : néant
+	Entraine : supprime un sommet au graphe
+	*****************************/
+	void GRASupprimerSommet(CSommet * sommet);
+
+	/*****************************
+	Methode : Modifier Sommet
+	******************************
+	Entrée : unsigned int uiNum, CSommet * SOMSommet
+	Necessité : néant
+	Sortie : néant
+	Entraine : modifie un sommet au graphe
+	*****************************/
+	void GRAModifierSommet(unsigned int uiNum, CSommet * SOMSommet);
+
+	/*****************************
+	Methode : Récupérer Sommet
+	******************************
+	Entrée : unsigned int uiSommet
+	Necessité : néant
+	Sortie : néant
+	Entraine : récupère un sommet du graphe
 	*****************************/
 	CSommet * GRAGetSommet(unsigned int uiSommet);
 
 	/*****************************
 	Methode : Ajouter Arc
 	******************************
-	EntrÃ©e : unsigned int uiDestination, CSommet * pSOMSommet
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
+	Entrée : unsigned int uiDestination, CSommet * sommet
+	Necessité : néant
+	Sortie : néant
 	Entraine : ajoute un nouvel arc au graphe
 	*****************************/
-	void GRAAjoutArc(unsigned int uiDestination, CSommet * pSOMSommet);
+	void GRAAjoutArc(unsigned int uiDestination, CSommet * SOMSommet);
 
 	/*****************************
 	Methode : Supprimer Arc
 	******************************
-	EntrÃ©e : CArc * ARCArc, CSommet * SOMSommet
-	NecessitÃ© : nÃ©ant
-	Sortie : nÃ©ant
+	Entrée : CArc * ARCArc, CSommet * SOMSommet
+	Necessité : néant
+	Sortie : néant
 	Entraine : supprime un arc au graphe
 	*****************************/
-	void GRASupprimerArc(CArc * pARCarc, CSommet * pSOMSommet);
+	void GRASupprimerArc(CArc * ARCarc, CSommet * SOMSommet);
 
 	/*****************************
 	Methode : Afficher Arc
 	******************************
-	EntrÃ©e : nÃ©ant
-	NecessitÃ© : nÃ©ant
+	Entrée : néant
+	Necessité : néant
 	Sortie : affichage du graphe
 	Entraine : affichage du graphe dans la console
 	*****************************/
@@ -189,8 +189,8 @@ public:
 	/*****************************
 	Methode : Trouver Sommet
 	******************************
-	EntrÃ©e : unsigned int uiSommet
-	NecessitÃ© : nÃ©ant
+	Entrée : unsigned int uiSommet
+	Necessité : néant
 	Sortie : CSommet * 
 	Entraine : cherche et renvoi le sommet
 	*****************************/
@@ -199,11 +199,22 @@ public:
 	/*****************************
 	Methode : Trouver Arc
 	******************************
-	EntrÃ©e : CSommet * pSOMSommetSource, unsigned int uiDestination
-	NecessitÃ© : nÃ©ant
+	Entrée : CSommet * SOMSommetSource, unsigned int uiDestination
+	Necessité : néant
 	Sortie : CArc *
 	Entraine : cherche et renvoi l'arc
 	*****************************/
-	CArc * GRATrouverArc(CSommet * pSOMSommetSource, unsigned int uiDestination);
+	CArc * GRATrouverArcPartant(CSommet * SOMSommetSource, unsigned int uiDestination);
+
+
+	/*****************************
+	Methode : Trouver Arc Arrivant
+	******************************
+	Entrée : CSommet * SOMSommetSource, unsigned int uiDestination
+	Necessité : néant
+	Sortie : CArc *
+	Entraine : cherche et renvoi l'arc
+	*****************************/
+	CArc * GRATrouverArcArrivant(CSommet * SOMSommetSource, unsigned int uiDestination);
 };
 #endif
