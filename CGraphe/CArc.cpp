@@ -45,7 +45,7 @@ Surcharge de l'operateur =
 Entree : CArc & ARCArc
 Necessite : neant
 Sortie : CArc &
-Entraine : l'objet en cours est initialise
+Entraine : modification de l'objet a gauche du signe
 *****************************/
 CArc & CArc::operator=(CArc & ARCArc)
 {
