@@ -42,12 +42,12 @@ CArc::CArc(unsigned int uiNumDestination)
 /*****************************
 Surcharge de l'operateur =
 ******************************
-Entree : unsigned int uiDestination
+Entree : CArc & ARCArc
 Necessite : neant
-Sortie : neant
+Sortie : CArc &
 Entraine : l'objet en cours est initialise
 *****************************/
-CArc::operator=(CArc & ARCArc)
+CArc & CArc::operator=(CArc & ARCArc)
 {
 	uiARCDestination = ARCArc.uiARCDestination;
 }
