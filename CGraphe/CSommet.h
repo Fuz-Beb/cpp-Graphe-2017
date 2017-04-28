@@ -51,7 +51,7 @@ public:
 	******************************
 	Entrée : CSommet & SOMSommet
 	Necessité : néant
-	Sortie : néant
+	Sortie : CSommet &
 	Entraine : modification de l'objet a gauche du signe
 	*****************************/
 	CSommet & operator=(CSommet & SOMSommet);
