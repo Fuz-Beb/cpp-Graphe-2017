@@ -50,6 +50,7 @@ Entraine : modification de l'objet a gauche du signe
 CArc & CArc::operator=(CArc & ARCArc)
 {
 	uiARCDestination = ARCArc.uiARCDestination;
+	return *this;
 }
 
 /*****************************
