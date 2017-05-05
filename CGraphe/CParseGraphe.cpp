@@ -66,7 +66,7 @@ void CParseGraphe::PAGTraiterSommets()
 	// Initialisation du buffer ligne par ligne
 	char * sBuffer = nullptr;
 
-	// Verification que la declaration des sommets est bien e la suite du fichier
+	// Verification que la declaration des sommets est bien a la suite du fichier
 	if (!PARCompareChaine(PARLireLigne(), "sommets=[\n"))
 		throw CException(FORMATFICHIERINCORRECTE, "Lecture incorrect de Sommets=[");
 

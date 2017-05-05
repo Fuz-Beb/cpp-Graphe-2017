@@ -248,12 +248,12 @@ void CGraphe::GRASupprimerSommet(CSommet * SOMSommet)
 				if (ARCArcPartant->ARCGetDestination() ==  ppqGRASommets[uiBoucle]->SOMGetListArcPartant()[uiBoucleArcPartant]->ARCGetDestination()) {
 					delete(ARCArcPartant);
 					ppqGRASommets[uiBoucle]->SOMSetNbrArcPartant(ppqGRASommets[uiBoucle]->SOMGetNbrArcPartant() - 1);
-					while (uiBoucleArcPartant < ppqGRASommets[uiBoucle]->SOMGetNbrArcPartant()) {
+					while (uiBoucleArcPartant < ppqGRASommets[uiBoucle]->SOMGetNbrArcPartant()) { // 
 						ppqGRASommets[uiBoucle]->SOMGetListArcPartant()[uiBoucleArcPartant] = ppqGRASommets[uiBoucle]->SOMGetListArcPartant()[uiBoucleArcPartant + 1];
 						uiBoucleArcPartant++;
 					}
 					break;
-				} 
+				}
 	}
 
 	// Vider les arcs partant du sommets et arrivant dans les autres
@@ -414,7 +414,7 @@ void CGraphe::GRASupprimerArc(CArc * ARCArc, CSommet * SOMSommet)
 			SOMDestination->SOMSetNbrArcArrivant(SOMDestination->SOMGetNbrArcArrivant() - 1);
 			delete(ARCArcASupprimer);
 			while (uiBoucle < SOMDestination->SOMGetNbrArcArrivant()) {
-				SOMDestination->SOMGetListArcArrivant()[uiBoucle] = SOMSommet->SOMGetListArcArrivant()[uiBoucle + 1];
+				SOMDestination->SOMGetListArcArrivant()[uiBoucle] = SOMDestination->SOMGetListArcArrivant()[uiBoucle + 1];
 				uiBoucle++;
 			}
 			break;
