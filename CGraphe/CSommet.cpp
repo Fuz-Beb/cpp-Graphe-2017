@@ -1,6 +1,8 @@
 #include "CSommet.h"
 #include "CException.h"
 
+#define ECHECALLOCATION 1
+
 /*****************************
 Constructeur par défaut
 ******************************

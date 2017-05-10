@@ -2,6 +2,11 @@
 #define C_PARSE_H
 
 #include <fstream>
+#define FORMATFICHIERINCORRECTE 2
+#define ECHECOUVERTUREFICHIER 5
+#define ECHECLECTURELIGNEFICHIER 6
+#define ERREURARGS 11
+#define ERREURTEST 12
 
 using namespace std;
 

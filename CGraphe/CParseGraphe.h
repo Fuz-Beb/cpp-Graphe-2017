@@ -5,6 +5,7 @@
 #include "CGrapheOperation.h"
 #include <string>
 #include <stdio.h>
+#define FORMATFICHIERINCORRECTE 2
 
 class CParseGraphe : private CParse
 {

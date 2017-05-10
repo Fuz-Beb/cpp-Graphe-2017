@@ -2,6 +2,7 @@
 #include "CException.h"
 
 using namespace std;
+#define ECHECALLOCATION 1
 
 /*****************************
 Constructeur par défaut

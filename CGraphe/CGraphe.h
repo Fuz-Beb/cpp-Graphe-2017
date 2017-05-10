@@ -2,6 +2,13 @@
 #define C_GRAPHE_H
 
 #include "CSommet.h"
+#define ECHECALLOCATION 1
+#define ECHECADDARC 7
+#define ECHECNEWSOMMET 8
+#define ECHECNONTROUVE 9
+#define ECHECDOUBLONARC 10
+#define ERREURARGS 11
+#define ECHECLISTEVIDE 13
 
 class CGraphe
 {

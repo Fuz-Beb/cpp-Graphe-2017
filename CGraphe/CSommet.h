@@ -2,6 +2,8 @@
 #define C_SOMMET_H
 
 #include "CArc.h"
+#define ECHECALLOCATION 1
+#define ERREURARGS 11
 
 class CSommet
 {
