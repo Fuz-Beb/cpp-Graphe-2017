@@ -11,7 +11,7 @@ Entraine : l'objet en cours est initialise
 *****************************/
 CParseGraphe::CParseGraphe()
 {
-	graGraphe = CGrapheOperation();
+	PAGgraphe = CGrapheOperation();
 }
 
 /*****************************
@@ -24,7 +24,7 @@ Entraine : Creation d'un objet/pointeur en appellant le constructeur de recopie 
 *****************************/
 CGrapheOperation * CParseGraphe::PAGRetournerGraphe()
 {
-	return new CGrapheOperation(graGraphe);
+	return new CGrapheOperation(PAGgraphe);
 }
 
 /*****************************
@@ -37,7 +37,7 @@ Entraine : Retourne le nombre de sommets precedemment lu
 *****************************/
 unsigned int CParseGraphe::PAGLireNbSommets()
 {
-	return uiNbSommets;
+	return uiPAGNbSommets;
 }
 
 /*****************************
@@ -50,7 +50,7 @@ Entraine : Retourne le nombre d'arcs qui a ete precedemment lu
 *****************************/
 unsigned int CParseGraphe::PAGLireNbArcs()
 {
-	return uiNbArcs;
+	return uiPAGNbArcs;
 }
 
 /*****************************
@@ -71,14 +71,14 @@ void CParseGraphe::PAGTraiterSommets()
 		throw CException(FORMATFICHIERINCORRECTE, "Lecture incorrect de Sommets=[");
 
 	// Debut de la recuperation de la valeur de chaque sommets
-	for (unsigned int uiBoucleSommets = 1 ; uiBoucleSommets <= uiNbSommets ; uiBoucleSommets++) {
+	for (unsigned int uiBoucleSommets = 1 ; uiBoucleSommets <= uiPAGNbSommets ; uiBoucleSommets++) {
 		psBuffer = PARLireLigne();
 		
 		if (PARCompareChaine(PARSubString(psBuffer, 0, 1), "]")) {
 			delete(psBuffer);
 			throw CException(FORMATFICHIERINCORRECTE, "Il manque un sommet dans le fichier");
 		} else
-			graGraphe.GRAAjoutSommet(PARValeurApresSigneEgal("numero", psBuffer), nullptr, nullptr);
+			PAGgraphe.GRAAjoutSommet(PARValeurApresSigneEgal("numero", psBuffer), nullptr, nullptr);
 	}
 
 	// Verification de la fin de la declaration des sommets
@@ -104,7 +104,7 @@ Entraine : la lecture du fichier et creation des arcs du graphe
 void CParseGraphe::PAGTraiterArcs()
 {
 	// Initialisation du buffer ligne par ligne
-	char * sBuffer = nullptr;
+	char * psBuffer = nullptr;
 
 	// Initialisation Variables d'indice de boucles
 	unsigned int uiBufferDebut, uiBufferFin;
@@ -114,40 +114,40 @@ void CParseGraphe::PAGTraiterArcs()
 		throw CException(FORMATFICHIERINCORRECTE, "Lecture incorrect de Arcs=[");
 
 	// Debut de la recuperation de la valeur de chaque sommets
-	for (unsigned int uiBoucleArcs = 1 ; uiBoucleArcs <= uiNbArcs ; uiBoucleArcs++)
+	for (unsigned int uiBoucleArcs = 1 ; uiBoucleArcs <= uiPAGNbArcs ; uiBoucleArcs++)
 	{
 		// Lecture d'une ligne contenant la mention debut et fin
-		sBuffer = PARLireLigne();
+		psBuffer = PARLireLigne();
 
 		// Verification qu'il ne manque pas un arc dans le fichier
-		if (PARCompareChaine(PARSubString(sBuffer, 0, 1), "]")) {
-			delete(sBuffer);
+		if (PARCompareChaine(PARSubString(psBuffer, 0, 1), "]")) {
+			delete(psBuffer);
 			throw CException(FORMATFICHIERINCORRECTE, "Il manque un arc dans le fichier");
 		}
 
 		// Memorisation de l'arc de debut puis de fin
-		uiBufferDebut = PARValeurApresSigneEgal("debut", PARSubString(sBuffer, 0, PARRechercheCaractere(',', sBuffer)));
-		uiBufferFin = PARValeurApresSigneEgal("fin", PARSubString(sBuffer, PARRechercheCaractere('f', sBuffer), strlen(sBuffer)));
+		uiBufferDebut = PARValeurApresSigneEgal("debut", PARSubString(psBuffer, 0, PARRechercheCaractere(',', psBuffer)));
+		uiBufferFin = PARValeurApresSigneEgal("fin", PARSubString(psBuffer, PARRechercheCaractere('f', psBuffer), strlen(psBuffer)));
 
-		delete(sBuffer);
+		delete(psBuffer);
 
 		// Ajout des arcs au graphe
-		if (graGraphe.GRATrouverSommet(uiBufferDebut) == nullptr || graGraphe.GRATrouverSommet(uiBufferFin) == nullptr)
+		if (PAGgraphe.GRATrouverSommet(uiBufferDebut) == nullptr || PAGgraphe.GRATrouverSommet(uiBufferFin) == nullptr)
 			throw CException(FORMATFICHIERINCORRECTE, "Un arc essaye de rejoindre un sommet qui n'existe pas");
 
-		graGraphe.GRAAjoutArc(uiBufferFin, graGraphe.GRATrouverSommet(uiBufferDebut));
+		PAGgraphe.GRAAjoutArc(uiBufferFin, PAGgraphe.GRATrouverSommet(uiBufferDebut));
 	}
 
 	// Verification de la fin de la declaration des sommets
-	sBuffer = PARLireLigne();
+	psBuffer = PARLireLigne();
 
 	// Verification que c'est bien la fin de la declaration des sommets
-	if (!PARCompareChaine(PARSubString(sBuffer, 0, 1), "]")) {
-		delete(sBuffer);
+	if (!PARCompareChaine(PARSubString(psBuffer, 0, 1), "]")) {
+		delete(psBuffer);
 		throw CException(FORMATFICHIERINCORRECTE, "Lecture incorrect de la fin des arcs [");
 	}
 
-	delete(sBuffer);
+	delete(psBuffer);
 }
 
 /*****************************
@@ -165,13 +165,13 @@ void CParseGraphe::PAGTraiterFichier(char * psChemin)
 	PAROuvrirFichier(psChemin);
 
 	// Lecture et ecriture attribut du nombre de sommets
-	uiNbSommets = PARValeurApresSigneEgal("nbsommets", PARLireLigne());
+	uiPAGNbSommets = PARValeurApresSigneEgal("nbsommets", PARLireLigne());
 
 	// Lecture et ecriture attribut du nombre d'arcs
-	uiNbArcs = PARValeurApresSigneEgal("nbarcs", PARLireLigne());
+	uiPAGNbArcs = PARValeurApresSigneEgal("nbarcs", PARLireLigne());
 	
 	// Creation du graphe selon sa taille lu
-	graGraphe = CGrapheOperation();
+	PAGgraphe = CGrapheOperation();
 
 	// Initialisation des sommets du graphe
 	PAGTraiterSommets();
@@ -180,5 +180,5 @@ void CParseGraphe::PAGTraiterFichier(char * psChemin)
 	PAGTraiterArcs();
 
 	// Affichage du graphe
-	graGraphe.GRAAfficherGraphe();
+	PAGgraphe.GRAAfficherGraphe();
 }

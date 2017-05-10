@@ -284,7 +284,7 @@ Entraine : affecte le paramètre à l'attribut
 void CSommet::SOMSetListArcArrivant(CArc ** ppqARCarc)
 {
 	ppqSOMArcArrivant = ppqARCarc;
-	SOMCompterArc(ppqSOMArcArrivant);
+	uiSOMNbrArcArrivant = SOMCompterArc(ppqSOMArcArrivant);
 }
 
 /*****************************
@@ -311,7 +311,7 @@ Entraine : affecte le paramètre à l'attribut
 void CSommet::SOMSetListArcPartant(CArc ** ppqARCarc)
 {
 	ppqSOMArcPartant = ppqARCarc;
-	SOMCompterArc(ppqSOMArcPartant);
+	uiSOMNbrArcPartant = SOMCompterArc(ppqSOMArcPartant);
 }
 
 /*****************************

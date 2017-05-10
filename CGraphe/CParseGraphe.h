@@ -3,17 +3,15 @@
 
 #include "CParse.h"
 #include "CGrapheOperation.h"
-#include <string>
-#include <stdio.h>
 #define FORMATFICHIERINCORRECTE 2
 
 class CParseGraphe : private CParse
 {
 private:
 	// Attributs
-	unsigned int uiNbSommets;
-	unsigned int uiNbArcs;
-	CGrapheOperation graGraphe;
+	unsigned int uiPAGNbSommets;
+	unsigned int uiPAGNbArcs;
+	CGrapheOperation PAGgraphe;
 	
 	// Accesseurs
 
@@ -64,6 +62,17 @@ public:
 	CGrapheOperation * PAGRetournerGraphe();
 
 	/*****************************
+	Methode : Traiter fichier
+	******************************
+	Entrée : char * psChemin
+	Necessité : néant
+	Sortie : néant
+	Entraine : La lecture du fichier et création du graphe associée
+	*****************************/
+	void PAGTraiterFichier(char * psChemin);
+
+private:
+	/*****************************
 	Methode : Traiter Sommets
 	******************************
 	Entrée : néant
@@ -82,16 +91,5 @@ public:
 	Entraine : La lecture du fichier et création des arcs du graphe
 	*****************************/
 	void PAGTraiterArcs();
-
-	/*****************************
-	Methode : Traiter fichier
-	******************************
-	Entrée : char * psChemin
-	Necessité : néant
-	Sortie : néant
-	Entraine : La lecture du fichier et création du graphe associée
-	*****************************/
-	void PAGTraiterFichier(char * psChemin);
 };
-
 #endif

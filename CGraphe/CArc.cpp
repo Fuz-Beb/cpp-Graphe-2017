@@ -54,18 +54,6 @@ CArc & CArc::operator=(CArc & ARCArc)
 }
 
 /*****************************
-Destructeur par défaut
-******************************
-Entrée : néant
-Necessité : néant
-Sortie : néant
-Entraine : l'objet est détruit
-*****************************/
-CArc::~CArc()
-{
-}
-
-/*****************************
 Methode : Lire Destination
 ******************************
 Entrée : néant

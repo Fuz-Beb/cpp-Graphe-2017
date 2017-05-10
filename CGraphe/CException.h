@@ -45,7 +45,7 @@ public:
 	Sortie : néant
 	Entraine : l'object en cours en initialisé avec les même attributs que l'objet passé en paramètre
 	*****************************/
-	CException(CException & EXCObjet);
+	explicit CException(CException & EXCObjet);
 
 	/*****************************
 	Destructeur par défaut
