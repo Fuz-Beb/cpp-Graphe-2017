@@ -33,12 +33,22 @@ public:
 	/*****************************
 	Constructeur de confort
 	******************************
-	Entrée : unsigned int uiDestination
+	Entrée : unsigned int uiNumDestination
 	Necessité : néant
 	Sortie : néant
 	Entraine : l'objet en cours est initialisé
 	*****************************/
 	explicit CArc(unsigned int uiNumDestination);
+
+	/*****************************
+	Surcharge de l'operateur =
+	******************************
+	Entree : CArc & ARCArc
+	Necessite : neant
+	Sortie : CArc &
+	Entraine : modification de l'objet a gauche du signe
+	*****************************/
+	CArc & operator=(CArc & ARCArc);
 
 	/*****************************
 	Destructeur par défaut
@@ -65,11 +75,11 @@ public:
 	/*****************************
 	Methode : Modifier Destination
 	******************************
-	Entrée : unsigned int uiDestination
+	Entrée : unsigned int uiNumDestination
 	Necessité : néant
 	Sortie : néant
 	Entraine : affecte le paramètre à l'attribut
 	*****************************/
-	void ARCSetDestination(unsigned int uiDestination);
+	void ARCSetDestination(unsigned int uiNumDestination);
 };
 #endif

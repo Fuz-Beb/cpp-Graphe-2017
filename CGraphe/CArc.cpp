@@ -29,7 +29,7 @@ CArc::CArc(CArc & arc)
 /*****************************
 Constructeur de confort
 ******************************
-Entrée : unsigned int uiDestination
+Entrée : unsigned int uiNumDestination
 Necessité : néant
 Sortie : néant
 Entraine : l'objet en cours est initialisé
@@ -37,6 +37,20 @@ Entraine : l'objet en cours est initialisé
 CArc::CArc(unsigned int uiNumDestination)
 {
 	uiARCDestination = uiNumDestination;
+}
+
+/*****************************
+Surcharge de l'operateur =
+******************************
+Entree : CArc & ARCArc
+Necessite : neant
+Sortie : CArc &
+Entraine : modification de l'objet a gauche du signe
+*****************************/
+CArc & CArc::operator=(CArc & ARCArc)
+{
+	uiARCDestination = ARCArc.uiARCDestination;
+	return *this;
 }
 
 /*****************************
@@ -56,7 +70,7 @@ Methode : Lire Destination
 ******************************
 Entrée : néant
 Necessité : néant
-Sortie : unsigned int uiDestination
+Sortie : unsigned int uiARCDestination
 Entraine : retourne l'attribut
 *****************************/
 unsigned int CArc::ARCGetDestination()
@@ -67,12 +81,12 @@ unsigned int CArc::ARCGetDestination()
 /*****************************
 Methode : Modifier Destination
 ******************************
-Entrée : unsigned int uiDestination
+Entrée : unsigned int uiNumDestination
 Necessité : néant
 Sortie : néant
 Entraine : affecte le paramètre à l'attribut
 *****************************/
-void CArc::ARCSetDestination(unsigned int uiDestination) 
+void CArc::ARCSetDestination(unsigned int uiNumDestination) 
 {
-	uiARCDestination = uiDestination;
+	uiARCDestination = uiNumDestination;
 }

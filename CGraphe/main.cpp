@@ -16,7 +16,7 @@ void main(unsigned int argc, char *argv[])
 	}
 
 	// Allocations
-	CGrapheOperation ** ppqGRAGraphe = ppqGRAGraphe = (CGrapheOperation **) malloc (sizeof(CGrapheOperation *) * (argc - 1));
+	CGrapheOperation ** ppqGRAGraphe = (CGrapheOperation **) malloc (sizeof(CGrapheOperation *) * (argc - 1));
 	if (ppqGRAGraphe == nullptr)
 		throw CException(ECHECALLOCATION, "Echec de l'allocation");
 	CGrapheOperation ** ppqGRAGrapheInverse = (CGrapheOperation **) malloc (sizeof(CGrapheOperation *) * (argc - 1));
@@ -38,7 +38,9 @@ void main(unsigned int argc, char *argv[])
 			ppqGRAGraphe[uiBoucleTableau] = ppqPARparse->PAGRetournerGraphe();
 			ppqGRAGrapheInverse[uiBoucleTableau] = ppqGRAGraphe[uiBoucleTableau]->GRAInverserGraphe();
 			printf("\n\n ------ GRAPHE INVERSE ------ \n\n");
-			ppqGRAGraphe[uiBoucleTableau]->GRAAfficherGraphe();
+			ppqGRAGrapheInverse[uiBoucleTableau]->GRAAfficherGraphe();
+
+			delete(ppqPARparse);
 		}
 	} catch (CException & EXCObjet) {
 		std::cerr << "Code d'erreur : " << EXCObjet.EXCLectureCode() << std::endl << EXCObjet.EXCLectureMessage() << std::endl;
@@ -46,15 +48,11 @@ void main(unsigned int argc, char *argv[])
 
 	unsigned int uiBoucleSommet = 0, uiNbSommet = 0;
 
-
 	// Désallocation mémoire
 	for (uiBoucleTableau = 0 ; uiBoucleTableau < argc -1 ; uiBoucleTableau++) {
 		delete(ppqGRAGraphe[uiBoucleTableau]);
 		delete(ppqGRAGrapheInverse[uiBoucleTableau]);
 	}
-
-	delete(ppqPARparse);
 	delete(ppqGRAGraphe);
 	delete(ppqGRAGrapheInverse);
 }
-

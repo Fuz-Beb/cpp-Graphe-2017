@@ -15,15 +15,14 @@ CGrapheOperation::CGrapheOperation() : CGraphe()
 /*****************************
 Constructeur de recopie
 ******************************
-Entrée : CGrapheOperation & graGraphe);
+Entrée : CGrapheOperation & GRAgraphe
 Necessité : néant
 Sortie : néant
 Entraine : l'objet en paramètre est recopié et initialisé dans un nouvel objet
 *****************************/
-CGrapheOperation::CGrapheOperation(CGrapheOperation & graGrapheOperation) : CGraphe(graGrapheOperation)
+CGrapheOperation::CGrapheOperation(CGrapheOperation & GRAgraphe) : CGraphe(GRAgraphe)
 {
 }
-
 
 /*****************************
 Constructeur de confort

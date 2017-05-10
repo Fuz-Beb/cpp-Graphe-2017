@@ -4,21 +4,8 @@
 
 #include <iostream>
 
-
 // Utilisé en cas d'exception
 #define ECHECALLOCATION 1
-#define FORMATFICHIERINCORRECTE 2
-#define MAUVAISTYPE 3
-#define ERREURTAILLE 4
-#define ECHECOUVERTUREFICHIER 5
-#define ECHECLECTURELIGNEFICHIER 6
-#define ECHECADDARC 7
-#define ECHECNEWSOMMET 8
-#define ECHECNONTROUVE 9
-#define ECHECDOUBLONARC 10
-#define ERREURARGS 11
-#define ERREURTEST 12
-#define ECHECLISTEVIDE 13
 
 class CException
 {
@@ -97,7 +84,7 @@ public:
 	******************************
 	Entrée : néant
 	Necessité : néant
-	Sortie : néant
+	Sortie : char *
 	Entraine : affiche le message d'erreur
 	*****************************/
 	char * EXCLectureMessage();

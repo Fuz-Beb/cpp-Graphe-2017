@@ -2,6 +2,11 @@
 #define C_PARSE_H
 
 #include <fstream>
+#define FORMATFICHIERINCORRECTE 2
+#define ECHECOUVERTUREFICHIER 5
+#define ECHECLECTURELIGNEFICHIER 6
+#define ERREURARGS 11
+#define ERREURTEST 12
 
 using namespace std;
 
@@ -60,7 +65,7 @@ public:
 	/*****************************
 	Methode : Modifier Chemin
 	******************************
-	Entrée : char * sParam
+	Entrée : char * psParam
 	Necessité : néant
 	Sortie : néant
 	Entraine : modification de l'attribut sPARChemin
@@ -70,7 +75,7 @@ public:
 	/*****************************
 	Methode : Ouvrir Fichier
 	******************************
-	Entrée : char * sChaine
+	Entrée : char * psChaine
 	Necessité : Fichier
 	Sortie : néant
 	Entraine : ouverture un fichier
@@ -83,7 +88,7 @@ public:
 	Entrée : néant
 	Necessité : néant
 	Sortie : néant
-	Entraine : Fermeture du fichier
+	Entraine : fermeture du fichier
 	*****************************/
 	void PARFermerFicher();
 
@@ -93,7 +98,7 @@ public:
 	Methode : Lire Ligne
 	******************************
 	Entrée : néant
-	Necessité : Méthode Traiter fichier / Ouvrir fichier
+	Necessité : méthode Traiter fichier / Ouvrir fichier
 	Sortie : char *
 	Entraine : lecture d'une ligne du fichier et retourne sur le tas une chaîne
 	*****************************/
@@ -102,7 +107,7 @@ public:
 	/*****************************
 	Methode : SubString
 	******************************
-	Entrée : char * sParam, unsigned int uiDebut, unsigned int uiTaille
+	Entrée : char * psParam, unsigned int uiDebut, unsigned int uiTaille
 	Necessité : néant
 	Sortie : char *
 	Entraine : permet d'extraire une chaîne d'une position à une autre
@@ -112,7 +117,7 @@ public:
 	/*****************************
 	Methode : Concatener deux chaines
 	******************************
-	Entrée : const char * sStr1, const char * sStr2
+	Entrée : const char * psStr1, const char * psStr2
 	Necessité : néant
 	Sortie : char *
 	Entraine : retourne sur le tas la concatenation des deux chaînes
@@ -122,7 +127,7 @@ public:
 	/*****************************
 	Methode : Convertir Chaine Minuscule
 	******************************
-	Entrée : char * sChaine
+	Entrée : char * psParam
 	Necessité : néant
 	Sortie : néant
 	Entraine : convertir la chaine en paramètre en minuscule
@@ -142,22 +147,22 @@ public:
 	/*****************************
 	Methode : Rechercher un caractère dans une chaine
 	******************************
-	Entrée : char sCaractere, char * psChaine
+	Entrée : char cCaractere, char * psChaine
 	Necessité : Méthode Ouvrir fichier
 	Sortie : int
 	Entraine : retourne la position du caractere
 	*****************************/
-	int PARRechercheCaractere(char sCaractere, char * psChaine);
+	int PARRechercheCaractere(char cCaractere, char * psChaine);
 
 	/*****************************
 	Methode : Recuperer la chaine presente apres le premier caractere '=' rencontre
 	******************************
-	Entrée : char * psChaineAvantEgal, char * sBuffer
+	Entrée : char * psChaineAvantEgal, char * psBuffer
 	Necessité : Méthode Ouvrir fichier
 	Sortie : int
 	Entraine : retourne le int apres le caractere '='
 	*****************************/
-	int PARValeurApresSigneEgal(char * psChaineAvantEgal, char * sBuffer);
+	int PARValeurApresSigneEgal(char * psChaineAvantEgal, char * psBuffer);
 
 	/*****************************
 	Methode : Compare deux chaines de caractères
