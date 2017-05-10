@@ -33,7 +33,7 @@ public:
 	/*****************************
 	Constructeur de confort
 	******************************
-	Entrée : unsigned int uiDestination
+	Entrée : unsigned int uiNumDestination
 	Necessité : néant
 	Sortie : néant
 	Entraine : l'objet en cours est initialisé
@@ -75,11 +75,11 @@ public:
 	/*****************************
 	Methode : Modifier Destination
 	******************************
-	Entrée : unsigned int uiDestination
+	Entrée : unsigned int uiNumDestination
 	Necessité : néant
 	Sortie : néant
 	Entraine : affecte le paramètre à l'attribut
 	*****************************/
-	void ARCSetDestination(unsigned int uiDestination);
+	void ARCSetDestination(unsigned int uiNumDestination);
 };
 #endif

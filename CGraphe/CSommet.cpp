@@ -66,12 +66,12 @@ CSommet::CSommet(CSommet & SOMSommet)
 /*****************************
 Constructeur de confort
 ******************************
-Entrée : unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * ppqSommetArcPartant
+Entrée : unsigned int uiNumSommet, CArc * pqSommetArcArrivant, CArc * pqSommetArcPartant
 Necessité : néant
 Sortie : néant
 Entraine : l'objet en cours est initialisé
 *****************************/
-CSommet::CSommet(unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * ppqSommetArcPartant)
+CSommet::CSommet(unsigned int uiNumSommet, CArc * pqSommetArcArrivant, CArc * pqSommetArcPartant)
 {	
 	// Mise à 0 des arcs partant
 	uiSOMNbrArcArrivant = 0;
@@ -85,22 +85,22 @@ CSommet::CSommet(unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * p
 	ppqSOMArcPartant = nullptr;
 
 	// Allocation des arcs arrivant
-	if (ppqSommetArcArrivant != nullptr) {
+	if (pqSommetArcArrivant != nullptr) {
 		ppqSOMArcArrivant = (CArc **)malloc(sizeof(CSommet *));
 		if(ppqSOMArcArrivant == nullptr)
 			throw new CException(ECHECALLOCATION, "Echec de l'allocation");
 	
-		ppqSOMArcArrivant[0] = ppqSommetArcPartant;
+		ppqSOMArcArrivant[0] = pqSommetArcPartant;
 		uiSOMNbrArcArrivant++;
 	}
 	
 	// Allocation des arcs partant
-	if (ppqSommetArcPartant != nullptr) {
+	if (pqSommetArcPartant != nullptr) {
 		ppqSOMArcPartant = (CArc **)malloc(sizeof(CSommet *));
 		if(ppqSOMArcPartant == nullptr)
 			throw new CException(ECHECALLOCATION, "Echec de l'allocation");
 		
-		ppqSOMArcPartant[0] = ppqSommetArcPartant;
+		ppqSOMArcPartant[0] = pqSommetArcPartant;
 		uiSOMNbrArcPartant++;
 	}
 }
@@ -187,7 +187,7 @@ Methode : Lire Numero
 ******************************
 Entrée : néant
 Necessité : néant
-Sortie : unsigned int uiDestination
+Sortie : unsigned int uiSOMNum
 Entraine : retourne l'attribut
 *****************************/
 unsigned int CSommet::SOMGetNum()
@@ -213,7 +213,7 @@ Methode : Lire Nombre Arc
 ******************************
 Entrée : néant
 Necessité : néant
-Sortie : unsigned int uiNbr
+Sortie : unsigned int uiSOMNbrArcArrivant
 Entraine : retourne l'attribut
 *****************************/
 unsigned int CSommet::SOMGetNbrArcArrivant()
@@ -239,7 +239,7 @@ Methode : Lire Nombre Arc
 ******************************
 Entrée : néant
 Necessité : néant
-Sortie : unsigned int uiNbr
+Sortie : unsigned int uiSOMNbrArcPartant
 Entraine : retourne l'attribut
 *****************************/
 unsigned int CSommet::SOMGetNbrArcPartant()
@@ -276,14 +276,14 @@ CArc ** CSommet::SOMGetListArcArrivant()
 /*****************************
 Methode : Modifier Arc Arrivant
 ******************************
-Entrée : CArc ** arc
+Entrée : CArc ** ppqARCarc
 Necessité : néant
 Sortie : néant
 Entraine : affecte le paramètre à l'attribut
 *****************************/
-void CSommet::SOMSetListArcArrivant(CArc ** arc)
+void CSommet::SOMSetListArcArrivant(CArc ** ppqARCarc)
 {
-	ppqSOMArcArrivant = arc;
+	ppqSOMArcArrivant = ppqARCarc;
 	SOMCompterArc(ppqSOMArcArrivant);
 }
 
@@ -308,9 +308,9 @@ Necessité : néant
 Sortie : néant
 Entraine : affecte le paramètre à l'attribut
 *****************************/
-void CSommet::SOMSetListArcPartant(CArc ** arc)
+void CSommet::SOMSetListArcPartant(CArc ** ppqARCarc)
 {
-	ppqSOMArcPartant = arc;
+	ppqSOMArcPartant = ppqARCarc;
 	SOMCompterArc(ppqSOMArcPartant);
 }
 
@@ -390,22 +390,22 @@ void CSommet::SOMAddArcPartant(CArc * pARCArc)
 /*****************************
 Methode : Compter le nombre d'arc dans la liste
 ******************************
-Entrée : CArc ** ARCListArc
+Entrée : CArc ** ppARCListArc
 Necessité : néant
 Sortie : uiCompteur
 Entraine : compte le nombre d'arcs dans la liste et retourne le nombre
 *****************************/
-unsigned int CSommet::SOMCompterArc(CArc ** ARCListArc) 
+unsigned int CSommet::SOMCompterArc(CArc ** ppARCListArc) 
 {
 	unsigned int uiCompteur = 0;
 
-	if(ARCListArc == nullptr)
+	if(ppARCListArc == nullptr)
 		return 0;
 
-	if(ARCListArc[0] != nullptr)
+	if(ppARCListArc[0] != nullptr)
 		uiCompteur = 1;
 
-	while(ARCListArc[uiCompteur + 1] != nullptr) {
+	while(ppARCListArc[uiCompteur + 1] != nullptr) {
 		uiCompteur++;
 	}
 

@@ -4,7 +4,6 @@
 
 #include <iostream>
 
-
 // Utilisé en cas d'exception
 #define ECHECALLOCATION 1
 
@@ -85,7 +84,7 @@ public:
 	******************************
 	Entrée : néant
 	Necessité : néant
-	Sortie : néant
+	Sortie : char *
 	Entraine : affiche le message d'erreur
 	*****************************/
 	char * EXCLectureMessage();

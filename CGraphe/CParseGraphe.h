@@ -67,7 +67,7 @@ public:
 	Methode : Traiter Sommets
 	******************************
 	Entrée : néant
-	Necessité :  Méthode Traiter fichier / Ouvrir fichier
+	Necessité : méthode Traiter fichier / Ouvrir fichier
 	Sortie : néant
 	Entraine : La lecture du fichier et création des sommets du graphe
 	*****************************/
@@ -77,7 +77,7 @@ public:
 	Methode : Traiter Arcs
 	******************************
 	Entrée : néant
-	Necessité :  Méthode Traiter fichier / Ouvrir fichier
+	Necessité : méthode Traiter fichier / Ouvrir fichier
 	Sortie : néant
 	Entraine : La lecture du fichier et création des arcs du graphe
 	*****************************/
@@ -86,12 +86,12 @@ public:
 	/*****************************
 	Methode : Traiter fichier
 	******************************
-	Entrée : char * sChemin
+	Entrée : char * psChemin
 	Necessité : néant
 	Sortie : néant
 	Entraine : La lecture du fichier et création du graphe associée
 	*****************************/
-	void PAGTraiterFichier(char * sChemin);
+	void PAGTraiterFichier(char * psChemin);
 };
 
 #endif

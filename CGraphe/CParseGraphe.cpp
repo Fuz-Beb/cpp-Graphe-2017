@@ -57,14 +57,14 @@ unsigned int CParseGraphe::PAGLireNbArcs()
 Methode : Traiter Sommets
 ******************************
 Entree : neant
-Necessite :  Methode Traiter fichier / Ouvrir fichier
+Necessite : methode Traiter fichier / Ouvrir fichier
 Sortie : neant
 Entraine : La lecture du fichier et creation des sommets du graphe
 *****************************/
 void CParseGraphe::PAGTraiterSommets()
 {
 	// Initialisation du buffer ligne par ligne
-	char * sBuffer = nullptr;
+	char * psBuffer = nullptr;
 
 	// Verification que la declaration des sommets est bien a la suite du fichier
 	if (!PARCompareChaine(PARLireLigne(), "sommets=[\n"))
@@ -72,34 +72,34 @@ void CParseGraphe::PAGTraiterSommets()
 
 	// Debut de la recuperation de la valeur de chaque sommets
 	for (unsigned int uiBoucleSommets = 1 ; uiBoucleSommets <= uiNbSommets ; uiBoucleSommets++) {
-		sBuffer = PARLireLigne();
+		psBuffer = PARLireLigne();
 		
-		if (PARCompareChaine(PARSubString(sBuffer, 0, 1), "]")) {
-			delete(sBuffer);
+		if (PARCompareChaine(PARSubString(psBuffer, 0, 1), "]")) {
+			delete(psBuffer);
 			throw CException(FORMATFICHIERINCORRECTE, "Il manque un sommet dans le fichier");
 		} else
-			graGraphe.GRAAjoutSommet(PARValeurApresSigneEgal("numero", sBuffer), nullptr, nullptr);
+			graGraphe.GRAAjoutSommet(PARValeurApresSigneEgal("numero", psBuffer), nullptr, nullptr);
 	}
 
 	// Verification de la fin de la declaration des sommets
-	sBuffer = PARLireLigne();
+	psBuffer = PARLireLigne();
 
 	// Verification que c'est bien la fin de la declaration des sommets
-	if (!PARCompareChaine(PARSubString(sBuffer, 0, 1), "]")) {
-		delete(sBuffer);
+	if (!PARCompareChaine(PARSubString(psBuffer, 0, 1), "]")) {
+		delete(psBuffer);
 		throw CException(FORMATFICHIERINCORRECTE, "Lecture incorrect de la fin des sommets [");
 	}
 
-	delete(sBuffer);
+	delete(psBuffer);
 }
 
 /*****************************
 Methode : Traiter Arcs
 ******************************
 Entree : neant
-Necessite :  Methode Traiter fichier / Ouvrir fichier
+Necessite : methode Traiter fichier / Ouvrir fichier
 Sortie : neant
-Entraine : La lecture du fichier et creation des arcs du graphe
+Entraine : la lecture du fichier et creation des arcs du graphe
 *****************************/
 void CParseGraphe::PAGTraiterArcs()
 {
@@ -153,16 +153,16 @@ void CParseGraphe::PAGTraiterArcs()
 /*****************************
 Methode : Traiter fichier
 ******************************
-Entree : char * sChemin
+Entree : char * psChemin
 Necessite : neant
 Sortie : neant
 Entraine : La lecture du fichier et creation de la matrice associee
 *****************************/
-void CParseGraphe::PAGTraiterFichier(char * sChemin)
+void CParseGraphe::PAGTraiterFichier(char * psChemin)
 {
 	// Mise en place de l'ouverture du fichier
-	PARModifierChemin(sChemin);
-	PAROuvrirFichier(sChemin);
+	PARModifierChemin(psChemin);
+	PAROuvrirFichier(psChemin);
 
 	// Lecture et ecriture attribut du nombre de sommets
 	uiNbSommets = PARValeurApresSigneEgal("nbsommets", PARLireLigne());

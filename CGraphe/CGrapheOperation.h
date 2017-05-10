@@ -17,17 +17,17 @@ public:
 	Sortie : néant
 	Entraine : l'objet en cours est initialisé
 	*****************************/
-	CGrapheOperation();
+	explicit CGrapheOperation();
 
 	/*****************************
 	Constructeur de recopie
 	******************************
-	Entrée : CGrapheOperation & graGraphe);
+	Entrée : CGrapheOperation & GRAgraphe
 	Necessité : néant
 	Sortie : néant
 	Entraine : l'objet en paramètre est recopié et initialisé dans un nouvel objet
 	*****************************/
-	explicit CGrapheOperation(CGrapheOperation & graGrapheOperation);
+	explicit CGrapheOperation(CGrapheOperation & GRAgrapheOperation);
 
 	/*****************************
 	Constructeur de confort
