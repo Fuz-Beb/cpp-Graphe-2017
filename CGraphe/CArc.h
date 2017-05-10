@@ -50,16 +50,6 @@ public:
 	*****************************/
 	CArc & operator=(CArc & ARCArc);
 
-	/*****************************
-	Destructeur par défaut
-	******************************
-	Entrée : néant
-	Necessité : néant
-	Sortie : néant
-	Entraine : l'objet est détruit
-	*****************************/
-	~CArc();
-
 	// Accesseurs
 
 	/*****************************
