@@ -2,13 +2,6 @@
 #define C_GRAPHE_H
 
 #include "CSommet.h"
-#define ECHECALLOCATION 1
-#define ECHECADDARC 7
-#define ECHECNEWSOMMET 8
-#define ECHECNONTROUVE 9
-#define ECHECDOUBLONARC 10
-#define ERREURARGS 11
-#define ECHECLISTEVIDE 13
 
 class CGraphe
 {
@@ -78,40 +71,10 @@ public:
 	******************************
 	Entrée : néant
 	Necessité : néant
-	Sortie : CSommet ** ppqSOMSommets
+	Sortie : unsigned int uiGRANbSommets
 	Entraine : retourne l'attribut
 	*****************************/
 	CSommet ** CGraphe::GRAGetSommets();
-
-	/*****************************
-	Methode : Ajouter Sommet
-	******************************
-	Entrée : unsigned int uiSommet, CArc * pqArrivant, CArc * pqPartant
-	Necessité : néant
-	Sortie : néant
-	Entraine : ajoute un nouveau sommet au graphe
-	*****************************/
-	void GRAAjoutSommet(unsigned int uiSommet, CArc * pqArrivant, CArc * pqPartant);
-
-	/*****************************
-	Methode : Supprimer Sommet
-	******************************
-	Entrée : CSommet * pqSOMsommet
-	Necessité : néant
-	Sortie : néant
-	Entraine : supprime un sommet au graphe
-	*****************************/
-	void GRASupprimerSommet(CSommet * pqSOMsommet);
-
-	/*****************************
-	Methode : Modifier Sommet
-	******************************
-	Entrée : unsigned int uiNum, CSommet * pqSOMsommet
-	Necessité : néant
-	Sortie : néant
-	Entraine : modifie un sommet au graphe
-	*****************************/
-	void GRAModifierSommet(unsigned int uiNum, CSommet * pqSOMsommet);
 
 	/*****************************
 	Methode : Lire Nombre Sommets
@@ -154,34 +117,54 @@ public:
 	void GRASetNbArcs(unsigned int uiNbArcs);
 
 	/*****************************
-	Methode : Récupérer Sommet
+	Methode : Ajouter Sommet
 	******************************
-	Entrée : unsigned int uiSommet
+	Entrée : unsigned int uiSommet, CArc * ppqArrivant, CArc * ppqPartant
 	Necessité : néant
-	Sortie : CSommet *
-	Entraine : récupère un sommet du graphe
+	Sortie : néant
+	Entraine : ajoute un nouveau sommet au graphe
 	*****************************/
-	CSommet * GRAGetSommet(unsigned int uiSommet);
+	void GRAAjoutSommet(unsigned int uiSommet, CArc * ppqArrivant, CArc * ppqPartant);
+
+	/*****************************
+	Methode : Supprimer Sommet
+	******************************
+	Entrée : CSommet * sommet
+	Necessité : néant
+	Sortie : néant
+	Entraine : supprime un sommet au graphe
+	*****************************/
+	void GRASupprimerSommet(CSommet * sommet);
+
+	/*****************************
+	Methode : Modifier Sommet
+	******************************
+	Entrée : unsigned int uiNum, CSommet * SOMSommet
+	Necessité : néant
+	Sortie : néant
+	Entraine : modifie un sommet au graphe
+	*****************************/
+	void GRAModifierSommet(unsigned int uiNum, CSommet * SOMSommet);
 
 	/*****************************
 	Methode : Ajouter Arc
 	******************************
-	Entrée : unsigned int uiDestination, CSommet * pqSOMSommet
+	Entrée : unsigned int uiDestination, CSommet * sommet
 	Necessité : néant
 	Sortie : néant
 	Entraine : ajoute un nouvel arc au graphe
 	*****************************/
-	void GRAAjoutArc(unsigned int uiDestination, CSommet * pqSOMSommet);
+	void GRAAjoutArc(unsigned int uiDestination, CSommet * SOMSommet);
 
 	/*****************************
 	Methode : Supprimer Arc
 	******************************
-	Entrée : CArc * pqARCarc, CSommet * pqSOMSommet
+	Entrée : CArc * ARCArc, CSommet * SOMSommet
 	Necessité : néant
 	Sortie : néant
 	Entraine : supprime un arc au graphe
 	*****************************/
-	void GRASupprimerArc(CArc * pqARCarc, CSommet * pqSOMSommet);
+	void GRASupprimerArc(CArc * ARCarc, CSommet * SOMSommet);
 
 	/*****************************
 	Methode : Afficher Arc
@@ -206,22 +189,22 @@ public:
 	/*****************************
 	Methode : Trouver Arc
 	******************************
-	Entrée : CSommet * pqSOMSommetSource, unsigned int uiDestination
+	Entrée : CSommet * SOMSommetSource, unsigned int uiDestination
 	Necessité : néant
 	Sortie : CArc *
 	Entraine : cherche et renvoi l'arc
 	*****************************/
-	CArc * GRATrouverArcPartant(CSommet * pqSOMSommetSource, unsigned int uiDestination);
+	CArc * GRATrouverArcPartant(CSommet * SOMSommetSource, unsigned int uiDestination);
 
 
 	/*****************************
 	Methode : Trouver Arc Arrivant
 	******************************
-	Entrée : CSommet * pqSOMSommetSource, unsigned int uiDestination
+	Entrée : CSommet * SOMSommetSource, unsigned int uiDestination
 	Necessité : néant
 	Sortie : CArc *
 	Entraine : cherche et renvoi l'arc
 	*****************************/
-	CArc * GRATrouverArcArrivant(CSommet * pqSOMSommetSource, unsigned int uiDestination);
+	CArc * GRATrouverArcArrivant(CSommet * SOMSommetSource, unsigned int uiDestination);
 };
 #endif

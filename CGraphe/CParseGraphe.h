@@ -3,15 +3,16 @@
 
 #include "CParse.h"
 #include "CGrapheOperation.h"
-#define FORMATFICHIERINCORRECTE 2
+#include <string>
+#include <stdio.h>
 
 class CParseGraphe : private CParse
 {
 private:
 	// Attributs
-	unsigned int uiPAGNbSommets;
-	unsigned int uiPAGNbArcs;
-	CGrapheOperation PAGgraphe;
+	unsigned int uiNbSommets;
+	unsigned int uiNbArcs;
+	CGrapheOperation graGraphe;
 	
 	// Accesseurs
 
@@ -62,21 +63,10 @@ public:
 	CGrapheOperation * PAGRetournerGraphe();
 
 	/*****************************
-	Methode : Traiter fichier
-	******************************
-	Entrée : char * psChemin
-	Necessité : néant
-	Sortie : néant
-	Entraine : La lecture du fichier et création du graphe associée
-	*****************************/
-	void PAGTraiterFichier(char * psChemin);
-
-private:
-	/*****************************
 	Methode : Traiter Sommets
 	******************************
 	Entrée : néant
-	Necessité : méthode Traiter fichier / Ouvrir fichier
+	Necessité :  Méthode Traiter fichier / Ouvrir fichier
 	Sortie : néant
 	Entraine : La lecture du fichier et création des sommets du graphe
 	*****************************/
@@ -86,10 +76,21 @@ private:
 	Methode : Traiter Arcs
 	******************************
 	Entrée : néant
-	Necessité : méthode Traiter fichier / Ouvrir fichier
+	Necessité :  Méthode Traiter fichier / Ouvrir fichier
 	Sortie : néant
 	Entraine : La lecture du fichier et création des arcs du graphe
 	*****************************/
 	void PAGTraiterArcs();
+
+	/*****************************
+	Methode : Traiter fichier
+	******************************
+	Entrée : char * sChemin
+	Necessité : néant
+	Sortie : néant
+	Entraine : La lecture du fichier et création du graphe associée
+	*****************************/
+	void PAGTraiterFichier(char * sChemin);
 };
+
 #endif

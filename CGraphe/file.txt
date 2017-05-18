@@ -1,5 +1,5 @@
-NBSommets=30
-NBArcs=32
+NBSommets=10
+NBArcs=15
 Sommets=[
 Numero=1
 Numero=2
@@ -11,58 +11,21 @@ Numero=7
 Numero=8
 Numero=9
 Numero=10
-Numero=11
-Numero=12
-Numero=13
-Numero=14
-Numero=15
-Numero=16
-Numero=17
-Numero=18
-Numero=19
-Numero=20
-Numero=21
-Numero=22
-Numero=23
-Numero=24
-Numero=25
-Numero=26
-Numero=27
-Numero=28
-Numero=29
-Numero=30
 ]
 Arcs=[
-Debut=1, Fin=2 
+Debut=1, Fin=2
 Debut=2, Fin=1
-Debut=3, Fin=7 
-Debut=9, Fin=8
-Debut=4, Fin=2 
-Debut=1, Fin=23
-Debut=1, Fin=12 
-Debut=24, Fin=14
-Debut=12, Fin=20
-Debut=24, Fin=15
-Debut=2, Fin=9
-Debut=2, Fin=11
-Debut=14, Fin=10
-Debut=21, Fin=24
-Debut=1, Fin=30
-Debut=11, Fin=29
-Debut=12, Fin=24
-Debut=2, Fin=21
-Debut=1, Fin=26 
-Debut=21, Fin=1
-Debut=21, Fin=3
-Debut=21, Fin=30
-Debut=21, Fin=21
-Debut=7, Fin=25
-Debut=9, Fin=23 
-Debut=7, Fin=9
-Debut=1, Fin=4 
-Debut=6, Fin=29
-Debut=4, Fin=28
-Debut=2, Fin=24
-Debut=1, Fin=21
-Debut=1, Fin=29
+Debut=3, Fin=1 
+Debut=3, Fin=2
+Debut=4, Fin=2
+Debut=2, Fin=5
+Debut=5, Fin=2
+Debut=8, Fin=9
+Debut=1, Fin=10
+Debut=1, Fin=8
+Debut=3, Fin=7
+Debut=4, Fin=6
+Debut=2, Fin=10
+Debut=4, Fin=3
+Debut=3, Fin=5
 ]

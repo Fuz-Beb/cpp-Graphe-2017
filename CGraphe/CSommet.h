@@ -2,8 +2,6 @@
 #define C_SOMMET_H
 
 #include "CArc.h"
-#define ECHECALLOCATION 1
-#define ERREURARGS 11
 
 class CSommet
 {
@@ -31,7 +29,7 @@ public:
 	/*****************************
 	Constructeur de recopie
 	******************************
-	Entrée : CSommet & sommet
+	Entrée : CSommet & sommet);
 	Necessité : néant
 	Sortie : néant
 	Entraine : l'objet en paramètre est recopié et initialisé dans un nouvel objet
@@ -41,12 +39,12 @@ public:
 	/*****************************
 	Constructeur de confort
 	******************************
-	Entrée : unsigned int uiNumSommet, CArc * pqSommetArcArrivant, CArc * pqSommetArcPartant
+	Entrée : unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * ppqSommetArcPartant
 	Necessité : néant
 	Sortie : néant
 	Entraine : l'objet en cours est initialisé
 	*****************************/
-	explicit CSommet(unsigned int uiNumSommet, CArc * pqSommetArcArrivant, CArc * pqSommetArcPartant);
+	explicit CSommet(unsigned int uiNumSommet, CArc * ppqSommetArcArrivant, CArc * ppqSommetArcPartant);
 
 	/*****************************
 	Surchage de l'operateur =
@@ -143,12 +141,12 @@ public:
 	/*****************************
 	Methode : Modifier Arc Arrivant
 	******************************
-	Entrée : CArc ** ppqARC
+	Entrée : CArc ** arc
 	Necessité : néant
 	Sortie : néant
 	Entraine : affecte le paramètre à l'attribut
 	*****************************/
-	void SOMSetListArcArrivant(CArc ** ppqARC);
+	void SOMSetListArcArrivant(CArc ** arc);
 
 	/*****************************
 	Methode : Lire Arc Partant
@@ -163,63 +161,63 @@ public:
 	/*****************************
 	Methode : Modifier Arc Partant
 	******************************
-	Entrée : CArc ** ppqARC
+	Entrée : CArc ** arc
 	Necessité : néant
 	Sortie : néant
 	Entraine : affecte le paramètre à l'attribut
 	*****************************/
-	void SOMSetListArcPartant(CArc ** ppqARC);
+	void SOMSetListArcPartant(CArc ** arc);
 
 	/*****************************
 	Methode : Ajouter Arc Arrivant
 	******************************
-	Entrée : CArc * pARCarc
+	Entrée : CArc * arc
 	Necessité : néant
 	Sortie : néant
 	Entraine : affecte le paramètre arc à la liste des arcs
 	*****************************/
-	void SOMAddArcArrivant(CArc * pqARCarc);
+	void SOMAddArcArrivant(CArc * arc);
 
 	/*****************************
 	Methode : Ajouter Arc Partant
 	******************************
-	Entrée : CArc * pqARCarc
+	Entrée : CArc * arc
 	Necessité : néant
 	Sortie : néant
 	Entraine : affecte le paramètre arc à la liste des arcs
 	*****************************/
-	void  SOMAddArcPartant(CArc * pqARCarc);
+	void  SOMAddArcPartant(CArc * arc);
 
 
 	/*****************************
 	Methode : Supprimer Arc Arrivant
 	******************************
-	Entrée : CArc * pqARCarc
+	Entrée : CArc * arc
 	Necessité : néant
 	Sortie : néant
 	Entraine : supprime l'arc correspondant
 	*****************************/
-	void SOMSuppArcArrivant(CArc * pqARCarc);
+	void SOMSuppArcArrivant(CArc * arc);
 
 	/*****************************
 	Methode : Supprimer Arc Partant
 	******************************
-	Entrée : CArc * pqARCarc
+	Entrée : CArc * arc
 	Necessité : néant
 	Sortie : néant
 	Entraine : supprime l'arc correspondant
 	*****************************/
-	void  SOMSuppArcPartant(CArc * pqARCarc);
+	void  SOMSuppArcPartant(CArc * arc);
 
 	/*****************************
 	Methode : Compter le nombre d'arc dans la liste
 	******************************
-	Entrée : CArc ** ppqARCListArc
+	Entrée : CArc ** ARCListArc
 	Necessité : néant
 	Sortie : uiCompteur
 	Entraine : compte le nombre d'arcs dans la liste et retourne le nombre
 	*****************************/
-	unsigned int SOMCompterArc(CArc ** ppqARCListArc);
+	unsigned int SOMCompterArc(CArc ** ARCListArc);
 
 	/*****************************
 	Methode : Vider Sommet

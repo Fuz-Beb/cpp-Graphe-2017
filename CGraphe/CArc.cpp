@@ -29,7 +29,7 @@ CArc::CArc(CArc & arc)
 /*****************************
 Constructeur de confort
 ******************************
-Entrée : unsigned int uiNumDestination
+Entrée : unsigned int uiDestination
 Necessité : néant
 Sortie : néant
 Entraine : l'objet en cours est initialisé
@@ -58,7 +58,7 @@ Methode : Lire Destination
 ******************************
 Entrée : néant
 Necessité : néant
-Sortie : unsigned int uiARCDestination
+Sortie : unsigned int uiDestination
 Entraine : retourne l'attribut
 *****************************/
 unsigned int CArc::ARCGetDestination()
@@ -69,12 +69,12 @@ unsigned int CArc::ARCGetDestination()
 /*****************************
 Methode : Modifier Destination
 ******************************
-Entrée : unsigned int uiNumDestination
+Entrée : unsigned int uiDestination
 Necessité : néant
 Sortie : néant
 Entraine : affecte le paramètre à l'attribut
 *****************************/
-void CArc::ARCSetDestination(unsigned int uiNumDestination) 
+void CArc::ARCSetDestination(unsigned int uiDestination) 
 {
-	uiARCDestination = uiNumDestination;
+	uiARCDestination = uiDestination;
 }
