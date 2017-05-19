@@ -3,9 +3,12 @@
 
 #include "CGraphe.h"
 #include "CSommet.h"
+#include <stdlib.h>
 
 class CGrapheOperation : public CGraphe
 {
+private:
+	CSommet ** SOMListeStableMax;
 public:
 	// Constructeurs / Destructeurs
 
@@ -70,5 +73,47 @@ public:
 	Entraine : le graphe de sortie est converti en non orienté
 	*****************************/
 	CGrapheOperation * GRAConvertirGraphe();
+
+	/*****************************
+	Methode : Trouver ensemble max sommets indépendants
+	******************************
+	Entrée : CGraphe & GRAGrapheOrientee, CSommet ** SOMTabStable
+	Necessité : neant
+	Sortie : void
+	Entraine : le graphe de sortie est inverse
+	*****************************/
+	void CGrapheOperation::calcStableMax(CGraphe * GRAGrapheOrientee, CSommet ** ppqSOMListeStable);
+
+	/*****************************
+	Methode : Compter Sommets
+	******************************
+	Entrée : CSommet ** SOMListeSommets
+	Necessité : néant
+	Sortie : unsigned int
+	Entraine : retourne le nombre de sommet
+	*****************************/
+	unsigned int CGrapheOperation::compterSommetsListe(CSommet ** SOMListeSommets);
+
+	/*****************************
+	Methode : Lire Sommets
+	******************************
+	Entrée : néant
+	Necessité : néant
+	Sortie : CSommet **
+	Entraine : retourne l'attribut
+	*****************************/
+	CSommet ** CGrapheOperation::GROGetSommets();
+
+	/*****************************
+	Methode : Modifier Sommets
+	******************************
+	Entrée : néant
+	Necessité : néant
+	Sortie : CSommet **
+	Entraine : retourne l'attribut
+	*****************************/
+	void CGrapheOperation::GROSetSommets(CSommet ** SOMListe);
 	};
+
+
 #endif
